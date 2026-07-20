@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protek Software | SAP ERP, CRM and e-Transformation Consulting</title>
+<meta name="description" content="Protek Software Systems Consulting - SAP ERP, CRM, e-Ledger and Fiori/UI5 application consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1E33;
+    --slate:#1C3450;
+    --brass:#C08A3E;
+    --brass-light:#D9A75C;
+    --paper:#F2F4F6;
+    --white:#FFFFFF;
+    --text:#3E4852;
+    --text-light:#7A8590;
+    --line:#E1E6EA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'IBM Plex Sans',sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.6;
+  }
+  h1,h2,h3,.logo{font-family:'Space Grotesk',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* Top bar */
+  .topbar{background:var(--ink);color:#B9C2CC;font-size:13px;}
+  .topbar .wrap{display:flex;justify-content:flex-end;gap:28px;padding:9px 24px;}
+  .topbar a{color:#B9C2CC;}
+  .topbar span{color:var(--brass-light);margin-right:6px;}
+
+  /* Header / nav */
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+  .logo{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:.2px;}
+  .logo span{color:var(--brass);}
+  .logo small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:1.2px;color:var(--text-light);text-transform:uppercase;margin-top:2px;}
+  nav ul{display:flex;align-items:center;gap:34px;}
+  nav a{font-size:14.5px;font-weight:500;color:var(--slate);position:relative;padding:6px 0;}
+  nav a:hover{color:var(--brass);}
+  .dropdown{position:relative;}
+  .dropdown .menu{
+    position:absolute;top:100%;left:-16px;background:var(--white);border:1px solid var(--line);
+    min-width:220px;padding:8px 0;box-shadow:0 12px 28px rgba(15,30,51,.1);
+    opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease;border-top:2px solid var(--brass);
+  }
+  .dropdown:hover .menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .dropdown .menu a{display:block;padding:10px 20px;font-size:14px;color:var(--text);}
+  .dropdown .menu a:hover{background:var(--paper);color:var(--brass);}
+  .lang{font-size:13px;color:var(--text-light);}
+  .lang a{padding:0 4px;}
+  .lang a.active{color:var(--ink);font-weight:600;}
+
+  /* Hero */
+  .hero{
+    background:var(--ink);
+    background-image:
+      linear-gradient(180deg, rgba(15,30,51,.94), rgba(15,30,51,.88)),
+      repeating-linear-gradient(0deg, rgba(217,167,92,.06) 0px, rgba(217,167,92,.06) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(90deg, rgba(217,167,92,.06) 0px, rgba(217,167,92,.06) 1px, transparent 1px, transparent 64px);
+    color:var(--white);
+    padding:110px 24px 130px;
+    text-align:center;
+    position:relative;
+  }
+  .hero .eyebrow{
+    display:inline-block;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--brass-light);font-weight:600;margin-bottom:18px;
+  }
+  .hero h1{font-size:44px;font-weight:600;max-width:760px;margin:0 auto 20px;line-height:1.25;}
+  .hero p{font-size:16.5px;color:#C6CDD5;max-width:600px;margin:0 auto 34px;}
+  .btn{
+    display:inline-block;background:var(--brass);color:var(--ink);font-weight:600;font-size:14.5px;
+    padding:14px 34px;border-radius:2px;transition:.2s;
+  }
+  .btn:hover{background:var(--brass-light);}
+
+  /* Services grid */
+  .services{padding:0 24px;margin-top:-70px;position:relative;z-index:2;margin-bottom:90px;}
+  .grid{
+    max-width:1180px;margin:0 auto;display:grid;
+    grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .card{
+    border:none;padding:36px 30px 30px;
+    box-shadow:0 18px 40px rgba(15,30,51,.12);
+    transition:.2s;color:#fff;cursor:pointer;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(15,30,51,.2);}
+  .card.c-erp{background:#1C3450;}
+  .card.c-crm{background:#146357;}
+  .card.c-edefter{background:#A9762E;}
+  .card.c-ui5{background:#4A3E86;}
+  .card.c-ik{background:#96472F;}
+  .card.c-contact{background:#1F6699;}
+  .icon{
+    width:46px;height:46px;border-radius:8px;background:rgba(255,255,255,.16);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .icon svg{width:24px;height:24px;stroke:#fff;}
+  .card h3{font-size:18px;color:#fff;margin-bottom:10px;font-weight:600;}
+  .card p{font-size:14.5px;color:rgba(255,255,255,.78);}
+  .card a.more,.card span.more{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px;}
+
+  section.block{padding:80px 24px;}
+  .block .wrap{max-width:1180px;}
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .kicker{font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:14px;}
+  .about h2{font-size:30px;color:var(--ink);margin-bottom:18px;font-weight:600;}
+  .about p{margin-bottom:14px;font-size:15px;}
+  .ledger-panel{
+    background:var(--ink);border-radius:4px;padding:34px;color:#fff;
+  }
+  .ledger-panel .row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px;}
+  .ledger-panel .row:last-child{border-bottom:none;}
+  .ledger-panel .row b{color:var(--brass-light);font-family:'Space Grotesk',sans-serif;font-size:20px;}
+
+  /* Contact */
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:stretch;}
+  .contact h2{font-size:30px;color:var(--ink);margin-bottom:20px;font-weight:600;}
+  .contact-info{border-left:3px solid var(--brass);padding-left:24px;}
+  .contact-info p{margin-bottom:10px;font-size:14.5px;}
+  .contact-info b{color:var(--ink);}
+  .map-box{border:1px solid var(--line);min-height:280px;}
+  .map-box iframe{width:100%;height:100%;min-height:280px;border:0;}
+
+  footer{background:var(--ink);color:#8D97A2;padding:26px 24px;font-size:13px;text-align:center;}
+  footer b{color:#B9C2CC;}
+
+  /* Service modal */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(9,16,28,.72);z-index:300;
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    opacity:0;visibility:hidden;transition:.22s ease;
+  }
+  .modal-overlay.active{opacity:1;visibility:visible;}
+  .modal-box{
+    width:100%;max-width:640px;max-height:86vh;overflow-y:auto;
+    padding:52px 48px;border-radius:6px;position:relative;color:#fff;
+    box-shadow:0 40px 90px rgba(0,0,0,.45);
+    transform:translateY(24px) scale(.98);transition:.22s ease;
+  }
+  .modal-overlay.active .modal-box{transform:translateY(0) scale(1);}
+  .modal-close{
+    position:absolute;top:20px;right:20px;background:rgba(255,255,255,.15);border:none;color:#fff;
+    width:36px;height:36px;border-radius:50%;font-size:17px;cursor:pointer;line-height:1;
+  }
+  .modal-close:hover{background:rgba(255,255,255,.3);}
+  .modal-icon{width:60px;height:60px;border-radius:12px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;margin-bottom:26px;}
+  .modal-icon svg{width:30px;height:30px;stroke:#fff;}
+  .modal-box .modal-eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600;margin-bottom:10px;}
+  .modal-box h2{font-size:28px;margin-bottom:20px;font-weight:600;}
+  .modal-box p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:14px;}
+  .modal-box ul{margin:0 0 14px 0;padding:0;}
+  .modal-box ul li{list-style:none;font-size:14.5px;color:rgba(255,255,255,.85);padding:8px 0 8px 24px;position:relative;border-top:1px solid rgba(255,255,255,.12);}
+  .modal-box ul li:first-child{border-top:none;}
+  .modal-box ul li::before{content:"→";position:absolute;left:0;color:rgba(255,255,255,.6);}
+  .modal-btn{
+    display:inline-block;margin-top:16px;background:#fff;color:var(--ink);font-weight:600;font-size:14.5px;
+    padding:13px 30px;border-radius:2px;
+  }
+  .modal-btn:hover{background:#EDEDED;}
+  body.modal-open{overflow:hidden;}
+  @media(max-width:600px){
+    .modal-box{padding:38px 26px;}
+    .modal-box h2{font-size:23px;}
+  }
+
+
+  @media(max-width:900px){
+    nav ul{display:none;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    .services{margin-top:-40px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="tel:+902629994323"><span>Phone</span>+90 262 999 4323</a>
+    <a href="mailto:bilgi@proteksistem.com"><span>Email</span>bilgi@proteksistem.com</a>
+  </div>
+</div>
+
+<header>
+  <div class="navrow wrap">
+    <a href="#home" class="logo">PROTEK <span>YAZILIM</span>
+      <small>Systems Consulting</small>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#services">Services</a>
+          <div class="menu">
+            <a href="javascript:void(0)" onclick="openService('erp')">ERP</a>
+            <a href="javascript:void(0)" onclick="openService('crm')">CRM</a>
+            <a href="javascript:void(0)" onclick="openService('edefter')">e-Ledger</a>
+            <a href="javascript:void(0)" onclick="openService('ui5')">UI5 &amp; Mobile Apps</a>
+          </div>
+        </li>
+        <li><a href="#ik">Human Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="lang"><a href="en.html" class="active">EN</a> / <a href="tr.html">TR</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="eyebrow">SAP ERP · CRM · E-TRANSFORMATION CONSULTING</div>
+  <h1>Your Trusted Partner for Solid Enterprise Processes</h1>
+  <p>Our journey, which began with SAP ERP, continues to grow stronger in business intelligence, supply chain, customer relations and e-transformation.</p>
+  <a href="#contact" class="btn">Get in Touch</a>
+</section>
+
+<div class="services" id="services">
+  <div class="grid">
+
+    <div class="card c-erp" id="erp" onclick="openService('erp')">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M4 11h16"/></svg></div>
+      <h3>ERP Consulting</h3>
+      <p>Manage your finance, supply chain and operations processes on a single platform with SAP ERP, tailored to your industry.</p>
+      <span class="more">Learn more →</span>
+    </div>
+
+    <div class="card c-crm" id="crm" onclick="openService('crm')">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m5-2.63a4 4 0 100-8 4 4 0 000 8zm7-2a4 4 0 10-2-7.47"/></svg></div>
+      <h3>CRM Consulting</h3>
+      <p>SAP CRM solutions integrated with marketing, sales and service modules, putting customer satisfaction at the center.</p>
+      <span class="more">Learn more →</span>
+    </div>
+
+    <div class="card c-edefter" id="edefter" onclick="openService('edefter')">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg></div>
+      <h3>e-Ledger</h3>
+      <p>e-Ledger generation for SAP systems via familiar screens, powered by an XBRL reporting infrastructure — fast and uninterrupted.</p>
+      <span class="more">Learn more →</span>
+    </div>
+
+    <div class="card c-ui5" id="ui5" onclick="openService('ui5')">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+      <h3>Fiori / UI5 Applications</h3>
+      <p>Approval, data entry and reporting apps that run on mobile, tablet and desktop through the browser — no installation required.</p>
+      <span class="more">Learn more →</span>
+    </div>
+
+    <div class="card c-ik" id="ik">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+      <h3>Human Resources</h3>
+      <p>A corporate culture shaped by continuous training, transparent management and the protection of employee rights.</p>
+      <a href="#ik" class="more">Learn more →</a>
+    </div>
+
+    <div class="card c-contact" id="iletisim-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7"/></svg></div>
+      <h3>Get in Touch</h3>
+      <p>Reach out to our team directly for your projects or a demo of our existing applications.</p>
+      <a href="#contact" class="more">Contact →</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="block about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="kicker">About Us</div>
+      <h2>Delivering fast, accurate solutions since day one</h2>
+      <p>Protek delivers fast, accurate solutions that simplify the processes of the clients it serves in the field of enterprise applications.</p>
+      <p>Our solutions journey, which began with SAP ERP, continues to grow stronger in areas such as business intelligence, supply chain management, customer relations and e-transformation.</p>
+      <p>We also develop solutions and applications on platforms such as Microsoft .NET and Java.</p>
+    </div>
+    <div class="ledger-panel">
+      <div class="row"><span>Focus Area</span><b>SAP ERP</b></div>
+      <div class="row"><span>Expertise</span><b>CRM · e-Transformation</b></div>
+      <div class="row"><span>Platform</span><b>UI5 / Fiori</b></div>
+      <div class="row"><span>Location</span><b>Gebze, Kocaeli</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="block contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><b>Protek Software Systems Consulting<br>Computer Industry and Trade Ltd.</b></p>
+        <p>Barış Mah. Koşu Yolu Cad.<br>TÜBİTAK Gebze Campus, Marmara Technopark<br>No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye</p>
+        <p><b>Phone/Fax:</b> +90 262 999 4323</p>
+        <p><b>Email:</b> bilgi@proteksistem.com</p>
+      </div>
+    </div>
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d235.4149398459281!2d29.462633781081!3d40.78909292132639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1str!2str!4v1763541911264!5m2!1str!2str" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Protek Software</b> © 2026 — All rights reserved.
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeService()">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeService()" aria-label="Close">✕</button>
+    <div class="modal-icon" id="modalIcon"></div>
+    <div class="modal-eyebrow">SERVICES</div>
+    <h2 id="modalTitle"></h2>
+    <div id="modalBody"></div>
+    <a href="#" id="modalMail" class="modal-btn">Request Information</a>
+  </div>
+</div>
+
+<script>
+const servicesData = {
+  erp: {
+    color: "#1C3450",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M4 11h16"/></svg>',
+    title: "ERP Consulting",
+    body: `<p>SAP ERP makes it easier to manage the processes and operations vital to your business, offering solutions tailored to your industry.</p>
+           <p>SAP Finance Solutions provide an integrated financial transaction management system, meeting a wide range of calculation requirements while integrating with internal and external functions for multi-dimensional analysis.</p>
+           <p>Thanks to its flexible architecture and graphical reporting tools, it can be quickly adapted to your organization's specific needs.</p>`,
+    mail: "mailto:bilgi@proteksistem.com?subject=ERP%20Consulting%20Inquiry"
+  },
+  crm: {
+    color: "#146357",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m5-2.63a4 4 0 100-8 4 4 0 000 8zm7-2a4 4 0 10-2-7.47"/></svg>',
+    title: "CRM Consulting",
+    body: `<p>SAP CRM consists of three areas — Marketing, Sales and Service — and works in two-way integration with core ERP modules.</p>
+           <ul>
+             <li>Marketing: Brand Management, Segmentation, Campaign & Lead Management</li>
+             <li>Sales: Activities, Opportunities, Quotes, Orders, Contracts & E-Commerce</li>
+             <li>Service: Installations, Warranty, Service Contracts, Complaints & Returns</li>
+           </ul>`,
+    mail: "mailto:bilgi@proteksistem.com?subject=CRM%20Consulting%20Inquiry"
+  },
+  edefter: {
+    color: "#A9762E",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>',
+    title: "e-Ledger",
+    body: `<p>With Protek's e-Ledger software, we meet the e-ledger requirements of companies using SAP quickly and reliably.</p>
+           <ul>
+             <li>XBRL reporting infrastructure built on SAP</li>
+             <li>Easy to use through familiar SAP screens</li>
+             <li>Adapts easily to your existing journal ledger program</li>
+             <li>Fast results without performance loss</li>
+           </ul>
+           <p>For more information, contact us at <strong>edefter@proteksistem.com</strong>.</p>`,
+    mail: "mailto:edefter@proteksistem.com?subject=e-Ledger%20Inquiry"
+  },
+  ui5: {
+    color: "#4A3E86",
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>',
+    title: "Fiori / UI5 Applications",
+    body: `<p>With SAPUI5 technology, data entry, approvals and reporting can be done through the browser on mobile, PC and tablet devices — no installation required.</p>
+           <p>A few sample applications developed by our team:</p>
+           <ul>
+             <li>Vendor master data management app</li>
+             <li>Workflow & approval screens</li>
+             <li>Service / field applications</li>
+             <li>Resource planning schedule</li>
+           </ul>`,
+    mail: "mailto:bilgi@proteksistem.com?subject=Fiori%20%2F%20UI5%20Applications%20Inquiry"
+  }
+};
+
+function openService(key){
+  const s = servicesData[key];
+  if(!s) return;
+  document.getElementById('modalBox').style.background = s.color;
+  document.getElementById('modalIcon').innerHTML = s.icon;
+  document.getElementById('modalTitle').textContent = s.title;
+  document.getElementById('modalBody').innerHTML = s.body;
+  document.getElementById('modalMail').href = s.mail;
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.classList.add('modal-open');
+}
+function closeService(){
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.classList.remove('modal-open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeService();
+});
+</script>
+
+</body>
+</html>
