@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/proteksistem-react/static/css/main.8d639247.css",
-    "main.js": "/proteksistem-react/static/js/main.0116cdfc.js",
+    "main.css": "/proteksistem-react/static/css/main.d33f3db0.css",
+    "main.js": "/proteksistem-react/static/js/main.02bf836f.js",
     "static/js/453.244fa0f8.chunk.js": "/proteksistem-react/static/js/453.244fa0f8.chunk.js",
     "index.html": "/proteksistem-react/index.html",
-    "main.8d639247.css.map": "/proteksistem-react/static/css/main.8d639247.css.map",
-    "main.0116cdfc.js.map": "/proteksistem-react/static/js/main.0116cdfc.js.map",
+    "main.d33f3db0.css.map": "/proteksistem-react/static/css/main.d33f3db0.css.map",
+    "main.02bf836f.js.map": "/proteksistem-react/static/js/main.02bf836f.js.map",
     "453.244fa0f8.chunk.js.map": "/proteksistem-react/static/js/453.244fa0f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d639247.css",
-    "static/js/main.0116cdfc.js"
+    "static/css/main.d33f3db0.css",
+    "static/js/main.02bf836f.js"
   ]
 }
