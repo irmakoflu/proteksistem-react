@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/proteksistem-react">
       <div className="App">
         <ScrollToHash />
         <Header lang={lang} setLang={setLang} />
