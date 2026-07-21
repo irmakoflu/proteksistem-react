@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/proteksistem-react/static/css/main.b34b5105.css",
-    "main.js": "/proteksistem-react/static/js/main.66b10e17.js",
+    "main.js": "/proteksistem-react/static/js/main.40cf6c76.js",
     "static/js/453.244fa0f8.chunk.js": "/proteksistem-react/static/js/453.244fa0f8.chunk.js",
     "static/media/logo.png": "/proteksistem-react/static/media/logo.64b4a278ac50974f1cdf.png",
     "static/media/webnak.png": "/proteksistem-react/static/media/webnak.18f9e0d515552f120d50.png",
@@ -36,11 +36,11 @@
     "static/media/hidromek.png": "/proteksistem-react/static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "/proteksistem-react/index.html",
     "main.b34b5105.css.map": "/proteksistem-react/static/css/main.b34b5105.css.map",
-    "main.66b10e17.js.map": "/proteksistem-react/static/js/main.66b10e17.js.map",
+    "main.40cf6c76.js.map": "/proteksistem-react/static/js/main.40cf6c76.js.map",
     "453.244fa0f8.chunk.js.map": "/proteksistem-react/static/js/453.244fa0f8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b34b5105.css",
-    "static/js/main.66b10e17.js"
+    "static/js/main.40cf6c76.js"
   ]
 }
