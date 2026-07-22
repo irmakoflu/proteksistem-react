@@ -46,9 +46,9 @@
   padding:6px 0;
 }
   nav a:hover{color:var(--brass);}
-  .nav-home {
+  .nav-active {
   color: var(--brass-light) !important;
-  font-weight: 600;
+  font-weight: 700;
 }
   .dropdown{position:relative;}
   .dropdown .menu{

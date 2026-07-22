@@ -12,7 +12,7 @@ function Services({ lang }) {
 
   const goToContact = () => {
     markAppNav();
-    navigate('/', { state: { scrollTo: 'iletisim' } });
+    navigate('/iletisim');
   };
 
   return (

@@ -8,6 +8,7 @@ import RequireAppNav from './components/RequireAppNav';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
+import Contact from './pages/Contact';
 
 function App() {
   const [lang, setLang] = useState('tr');
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home lang={lang} />} />
           <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />
           <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
+          <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
         </Routes>
         <Footer lang={lang} />
       </div>

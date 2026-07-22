@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { markAppNav } from '../utils/navHelpers';
 
 function Header({ lang, setLang }) {
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const sectionIds = ['home', 'hakkimizda', 'services'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px' }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   const handleHomeClick = (e) => {
     markAppNav();
@@ -13,6 +37,13 @@ function Header({ lang, setLang }) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  const isHomeActive = location.pathname === '/' && activeSection === 'home';
+  const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
+  const isServicesActive =
+    location.pathname.startsWith('/hizmetlerimiz') ||
+    (location.pathname === '/' && activeSection === 'services');
+  const isContactActive = location.pathname.startsWith('/iletisim');
 
   return (
     <>
@@ -35,22 +66,35 @@ function Header({ lang, setLang }) {
           <nav>
             <ul>
               <li>
-                <Link to="/" className="nav-home" onClick={handleHomeClick}>
+                <Link to="/" className={isHomeActive ? 'nav-active' : ''} onClick={handleHomeClick}>
                   {lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 </Link>
               </li>
               <li>
-                <Link to="/" state={{ scrollTo: 'hakkimizda' }} onClick={markAppNav}>
+                <Link
+                  to="/"
+                  state={{ scrollTo: 'hakkimizda' }}
+                  className={isAboutActive ? 'nav-active' : ''}
+                  onClick={markAppNav}
+                >
                   {lang === 'tr' ? 'Hakkımızda' : 'About Us'}
                 </Link>
               </li>
               <li>
-                <Link to="/hizmetlerimiz" onClick={markAppNav}>
+                <Link
+                  to="/hizmetlerimiz"
+                  className={isServicesActive ? 'nav-active' : ''}
+                  onClick={markAppNav}
+                >
                   {lang === 'tr' ? 'HİZMETLERİMİZ' : 'Services'}
                 </Link>
               </li>
               <li>
-                <Link to="/" state={{ scrollTo: 'iletisim' }} onClick={markAppNav}>
+                <Link
+                  to="/iletisim"
+                  className={isContactActive ? 'nav-active' : ''}
+                  onClick={markAppNav}
+                >
                   {lang === 'tr' ? 'İLETİŞİM' : 'Contact'}
                 </Link>
               </li>

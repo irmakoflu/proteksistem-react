@@ -25,14 +25,14 @@ function Home({ lang }) {
   }, [lang]);
 
   const goToService = (key) => {
-   markAppNav();
+    markAppNav();
     window.open(`/#/hizmetlerimiz/${key}`, '_blank');
   };
 
-const goToContact = () => {
-  markAppNav();
-  navigate('/', { state: { scrollTo: 'iletisim' } });
-};
+  const goToContact = () => {
+    markAppNav();
+    navigate('/iletisim');
+  };
 
   return (
     <>
@@ -58,6 +58,43 @@ const goToContact = () => {
         <button className="btn" onClick={goToContact}>
           {lang === 'tr' ? 'Bize Ulaşın' : 'Get in Touch'}
         </button>
+      </section>
+
+      <section className="block about" id="hakkimizda">
+        <div className="wrap">
+          <div className="services-heading">
+            <span className="services-kicker">
+              {lang === 'tr' ? 'BİZ KİMİZ' : 'WHO WE ARE'}
+            </span>
+            <h2>{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</h2>
+          </div>
+
+          <div className="about-text">
+            <p>
+              {lang === 'tr'
+                ? 'Protek, kurumsal uygulamalar alanında hizmet verdiği müşterilerinin süreçlerini kolaylaştıran, hızlı ve doğru çözümler ortaya koyar.'
+                : 'Protek delivers fast, accurate solutions that simplify the processes of the clients it serves in the field of enterprise applications.'}
+            </p>
+            <p>
+              {lang === 'tr'
+                ? 'SAP ERP ile başlayan çözüm serüvenimiz; iş zekâsı, tedarik zinciri yönetimi, müşteri ilişkileri ve e-dönüşüm gibi alanlarda güçlenerek devam ediyor.'
+                : 'Our solutions journey, which began with SAP ERP, continues to grow stronger in areas such as business intelligence, supply chain management, customer relations and e-transformation.'}
+            </p>
+          </div>
+
+          <div className="logo-marquee">
+            <div className="logo-track logo-track-left">
+              {[...logosRow1, ...logosRow1].map((src, i) => (
+                <img src={src} alt="client-logo" key={`r1-${i}`} className="logo-marquee-img" />
+              ))}
+            </div>
+            <div className="logo-track logo-track-right">
+              {[...logosRow2, ...logosRow2].map((src, i) => (
+                <img src={src} alt="client-logo" key={`r2-${i}`} className="logo-marquee-img" />
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <div className="services" id="services">
@@ -113,78 +150,6 @@ const goToContact = () => {
 
         </div>
       </div>
-
-      <section className="block about" id="hakkimizda">
-        <div className="wrap">
-          <div className="services-heading">
-            <span className="services-kicker">
-              {lang === 'tr' ? 'BİZ KİMİZ' : 'WHO WE ARE'}
-            </span>
-            <h2>{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</h2>
-          </div>
-
-          <div className="about-text">
-            <p>
-              {lang === 'tr'
-                ? 'Protek, kurumsal uygulamalar alanında hizmet verdiği müşterilerinin süreçlerini kolaylaştıran, hızlı ve doğru çözümler ortaya koyar.'
-                : 'Protek delivers fast, accurate solutions that simplify the processes of the clients it serves in the field of enterprise applications.'}
-            </p>
-            <p>
-              {lang === 'tr'
-                ? 'SAP ERP ile başlayan çözüm serüvenimiz; iş zekâsı, tedarik zinciri yönetimi, müşteri ilişkileri ve e-dönüşüm gibi alanlarda güçlenerek devam ediyor.'
-                : 'Our solutions journey, which began with SAP ERP, continues to grow stronger in areas such as business intelligence, supply chain management, customer relations and e-transformation.'}
-            </p>
-          </div>
-
-          <div className="logo-marquee">
-            <div className="logo-track logo-track-left">
-              {[...logosRow1, ...logosRow1].map((src, i) => (
-                <img src={src} alt="client-logo" key={`r1-${i}`} className="logo-marquee-img" />
-              ))}
-            </div>
-            <div className="logo-track logo-track-right">
-              {[...logosRow2, ...logosRow2].map((src, i) => (
-                <img src={src} alt="client-logo" key={`r2-${i}`} className="logo-marquee-img" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block contact" id="iletisim">
-        <div className="wrap">
-          <h2>{lang === 'tr' ? 'İletişim' : 'Contact'}</h2>
-          <p className="contact-company">
-            {lang === 'tr' ? 'Protek Yazılım Sistem Danışmanlık' : 'Protek Software Systems Consulting'}
-          </p>
-
-          <div className="contact-columns">
-            <div className="contact-col">
-              <span className="contact-label">{lang === 'tr' ? 'Adres' : 'Address'}</span>
-              <a 
-                href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
-              >
-                {lang === 'tr'
-                  ? 'Barış Mah. Koşu Yolu Cad. TÜBİTAK Gebze Yerleşkesi Marmara Teknokent No: 32/17 İç Kapı No: Z01, Gebze / Kocaeli'
-                  : 'Barış Mah. Koşu Yolu Cad. TÜBİTAK Gebze Campus, Marmara Technopark No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye'}
-              </a>
-            </div>
-
-            <div className="contact-col">
-              <span className="contact-label">{lang === 'tr' ? 'Telefon' : 'Phone'}</span>
-              <a href="tel:+902629994323" className="contact-link">+90 262 999 4323</a>
-            </div>
-
-            <div className="contact-col">
-              <span className="contact-label">{lang === 'tr' ? 'E-posta' : 'Email'}</span>
-              <a href="mailto:bilgi@proteksistem.com" className="contact-link">bilgi@proteksistem.com</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
