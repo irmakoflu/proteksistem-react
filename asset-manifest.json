@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.831d3699.css",
-    "main.js": "./static/js/main.131ca065.js",
+    "main.css": "./static/css/main.865e3ace.css",
+    "main.js": "./static/js/main.256c13b3.js",
     "static/js/453.244fa0f8.chunk.js": "./static/js/453.244fa0f8.chunk.js",
+    "static/media/ik-bg.jpg": "./static/media/ik-bg.b4e919176ba508f29ae5.jpg",
     "static/media/logo.png": "./static/media/logo.64b4a278ac50974f1cdf.png",
+    "static/media/e-defter.jpg": "./static/media/e-defter.694b28aa65c27d169d7e.jpg",
+    "static/media/crm.jpg": "./static/media/crm.05d60a4fbba96e498362.jpg",
+    "static/media/erp.jpg": "./static/media/erp.2796696ad773cd64171d.jpg",
     "static/media/webnak.png": "./static/media/webnak.18f9e0d515552f120d50.png",
+    "static/media/sap.jpg": "./static/media/sap.1996cdad710d37125e78.jpg",
     "static/media/roche.png": "./static/media/roche.e60e85cdc929436965fb.png",
     "static/media/ditas.png": "./static/media/ditas.4f637b806c27e4dd0196.png",
     "static/media/garenta.png": "./static/media/garenta.4051133068156786eecd.png",
@@ -35,12 +40,12 @@
     "static/media/hunca.png": "./static/media/hunca.4894c54b8f29674e325e.png",
     "static/media/hidromek.png": "./static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "./index.html",
-    "main.831d3699.css.map": "./static/css/main.831d3699.css.map",
-    "main.131ca065.js.map": "./static/js/main.131ca065.js.map",
+    "main.865e3ace.css.map": "./static/css/main.865e3ace.css.map",
+    "main.256c13b3.js.map": "./static/js/main.256c13b3.js.map",
     "453.244fa0f8.chunk.js.map": "./static/js/453.244fa0f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.831d3699.css",
-    "static/js/main.131ca065.js"
+    "static/css/main.865e3ace.css",
+    "static/js/main.256c13b3.js"
   ]
 }
