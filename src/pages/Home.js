@@ -24,11 +24,10 @@ function Home({ lang }) {
     return () => clearInterval(interval);
   }, [lang]);
 
-  const goToService = (key) => {
-    markAppNav();
-    window.open(`/#/hizmetlerimiz/${key}`, '_blank');
-  };
-
+ const goToService = (key) => {
+  markAppNav();
+  navigate(`/hizmetlerimiz/${key}`);
+};
   const goToContact = () => {
     markAppNav();
     navigate('/iletisim');

@@ -6,6 +6,7 @@ import { markAppNav } from '../utils/navHelpers';
 function Header({ lang, setLang }) {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (location.pathname !== '/') return;
@@ -30,12 +31,22 @@ function Header({ lang, setLang }) {
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
   const handleHomeClick = (e) => {
     markAppNav();
+    setMenuOpen(false);
     if (location.pathname === '/') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleNavClick = () => {
+    markAppNav();
+    setMenuOpen(false);
   };
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
@@ -63,7 +74,24 @@ function Header({ lang, setLang }) {
           <Link to="/" className="logo-link" onClick={handleHomeClick}>
             <img src={logo} alt="Protek Yazılım Sistem Danışmanlık" className="logo-img" />
           </Link>
-          <nav>
+
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            {menuOpen ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            )}
+          </button>
+
+          <nav className={menuOpen ? 'nav-open' : ''}>
             <ul>
               <li>
                 <Link to="/" className={isHomeActive ? 'nav-active' : ''} onClick={handleHomeClick}>
@@ -75,7 +103,7 @@ function Header({ lang, setLang }) {
                   to="/"
                   state={{ scrollTo: 'hakkimizda' }}
                   className={isAboutActive ? 'nav-active' : ''}
-                  onClick={markAppNav}
+                  onClick={handleNavClick}
                 >
                   {lang === 'tr' ? 'Hakkımızda' : 'About Us'}
                 </Link>
@@ -84,7 +112,7 @@ function Header({ lang, setLang }) {
                 <Link
                   to="/hizmetlerimiz"
                   className={isServicesActive ? 'nav-active' : ''}
-                  onClick={markAppNav}
+                  onClick={handleNavClick}
                 >
                   {lang === 'tr' ? 'HİZMETLERİMİZ' : 'Services'}
                 </Link>
@@ -93,7 +121,7 @@ function Header({ lang, setLang }) {
                 <Link
                   to="/iletisim"
                   className={isContactActive ? 'nav-active' : ''}
-                  onClick={markAppNav}
+                  onClick={handleNavClick}
                 >
                   {lang === 'tr' ? 'İLETİŞİM' : 'Contact'}
                 </Link>

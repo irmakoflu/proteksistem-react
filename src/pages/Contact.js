@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackButton from '../components/BackButton';
 
 function Contact({ lang }) {
   const mapQuery = encodeURIComponent(
@@ -34,6 +35,7 @@ function Contact({ lang }) {
 
   return (
     <div className="contact-page">
+     <BackButton lang={lang} />
       <section className="block contact" id="iletisim">
         <div className="wrap">
           <h2>{lang === 'tr' ? 'İletişim' : 'Contact'}</h2>

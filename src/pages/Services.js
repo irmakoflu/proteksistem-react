@@ -1,14 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
+import BackButton from '../components/BackButton';
 
 function Services({ lang }) {
   const navigate = useNavigate();
 
   const goToService = (key) => {
-    markAppNav();
-    window.open(`/#/hizmetlerimiz/${key}`, '_blank');
-  };
+  markAppNav();
+  navigate(`/hizmetlerimiz/${key}`);
+};
 
   const goToContact = () => {
     markAppNav();
@@ -17,6 +18,7 @@ function Services({ lang }) {
 
   return (
     <div className="services-page">
+       <BackButton lang={lang}/>
       <div className="services" id="services">
         <div className="services-heading">
           <span className="services-kicker">{lang === 'tr' ? 'NELER SUNUYORUZ' : 'WHAT WE OFFER'}</span>
