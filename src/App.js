@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -12,6 +12,12 @@ import Contact from './pages/Contact';
 
 function App() {
   const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'tr');
+
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
 
   const changeLang = (newLang) => {
     setLang(newLang);

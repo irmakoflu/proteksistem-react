@@ -53,16 +53,13 @@ function Header({ lang, setLang }) {
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
- const isServicesActive = location.pathname === '/' && activeSection === 'services';
+  const isServicesActive = location.pathname === '/' && activeSection === 'services';
   const isContactActive = location.pathname.startsWith('/iletisim');
 
   return (
     <>
       <div className="topbar">
         <div className="wrap">
-          <a href="tel:+902629994323">
-            <span>{t('topbar.phone')}</span>+90 262 999 4323
-          </a>
           <a href="mailto:bilgi@proteksistem.com">
             <span>{t('topbar.email')}</span>bilgi@proteksistem.com
           </a>
@@ -108,16 +105,23 @@ function Header({ lang, setLang }) {
                   {t('nav.about')}
                 </Link>
               </li>
-             <li>
-  <Link
-    to="/"
-    state={{ scrollTo: 'services' }}
-    className={isServicesActive ? 'nav-active' : ''}
-    onClick={handleNavClick}
-  >
-    {t('nav.services')}
-  </Link>
-</li>
+              <li className="dropdown">
+                <Link
+                  to="/"
+                  state={{ scrollTo: 'services' }}
+                  className={isServicesActive ? 'nav-active' : ''}
+                  onClick={handleNavClick}
+                >
+                  {t('nav.services')}
+                </Link>
+                <div className="menu">
+                  <Link to="/hizmetlerimiz/erp" onClick={handleNavClick}>{t('services.erp.title')}</Link>
+                  <Link to="/hizmetlerimiz/crm" onClick={handleNavClick}>{t('services.crm.title')}</Link>
+                  <Link to="/hizmetlerimiz/edefter" onClick={handleNavClick}>{t('services.edefter.title')}</Link>
+                  <Link to="/hizmetlerimiz/ui5" onClick={handleNavClick}>{t('services.ui5.title')}</Link>
+                  <Link to="/hizmetlerimiz/ik" onClick={handleNavClick}>{t('services.ik.title')}</Link>
+                </div>
+              </li>
               <li>
                 <Link
                   to="/iletisim"

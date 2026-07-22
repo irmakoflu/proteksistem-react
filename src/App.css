@@ -25,7 +25,12 @@
 
   /* Top bar */
   .topbar{background:var(--ink);color:#B9C2CC;font-size:13px;}
-  .topbar .wrap{display:flex;justify-content:flex-end;gap:28px;padding:9px 24px;}
+  .topbar .wrap{
+  display:flex;
+  justify-content:center;   /* flex-end yerine */
+  gap:28px;
+  padding:9px 24px;
+}
   .topbar a{color:#B9C2CC;}
   .topbar span{color:var(--brass-light);margin-right:6px;}
 
@@ -286,6 +291,7 @@
 .contact-columns{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;  /* eklendi */
   gap: 60px;
 }
 .contact-col{

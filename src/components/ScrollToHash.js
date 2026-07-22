@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function ScrollToHash() {
   const location = useLocation();
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     const cameFromApp = sessionStorage.getItem('appNav');
     const target = location.state && location.state.scrollTo;
 
@@ -11,9 +12,11 @@ function ScrollToHash() {
       const el = document.getElementById(target);
       if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
     } else {
-      window.scrollTo(0, 0);
+      const topbarHeight = document.querySelector('.topbar')?.offsetHeight || 0;
+      window.scrollTo(0, topbarHeight);
     }
   }, [location]);
+
   return null;
 }
 
