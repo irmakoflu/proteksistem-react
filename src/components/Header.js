@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { markAppNav } from '../utils/navHelpers';
 
 function Header({ lang, setLang }) {
   const location = useLocation();
 
-const handleHomeClick = (e) => {
-  if (location.pathname === '/') {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-};
+  const handleHomeClick = (e) => {
+    markAppNav();
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -37,9 +39,21 @@ const handleHomeClick = (e) => {
                   {lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 </Link>
               </li>
-              <li><Link to="/#hakkimizda">{lang === 'tr' ? 'Hakkımızda' : 'About Us'}</Link></li>
-              <li><Link to="/hizmetlerimiz">{lang === 'tr' ? 'HİZMETLERİMİZ' : 'Services'}</Link></li>
-              <li><Link to="/#iletisim">{lang === 'tr' ? 'İLETİŞİM' : 'Contact'}</Link></li>
+              <li>
+                <Link to="/" state={{ scrollTo: 'hakkimizda' }} onClick={markAppNav}>
+                  {lang === 'tr' ? 'Hakkımızda' : 'About Us'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/hizmetlerimiz" onClick={markAppNav}>
+                  {lang === 'tr' ? 'HİZMETLERİMİZ' : 'Services'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/" state={{ scrollTo: 'iletisim' }} onClick={markAppNav}>
+                  {lang === 'tr' ? 'İLETİŞİM' : 'Contact'}
+                </Link>
+              </li>
               <li className="lang">
                 <button
                   onClick={() => setLang(lang === 'tr' ? 'en' : 'tr')}

@@ -1,10 +1,13 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import servicesData from '../data/servicesData';
 
 function ServiceDetail({ lang }) {
   const { serviceKey } = useParams();
+  const navigate = useNavigate();
   const s = servicesData[serviceKey];
+
+   
 
   if (!s) {
     return (

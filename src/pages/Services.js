@@ -1,9 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { markAppNav } from '../utils/navHelpers';
 
 function Services({ lang }) {
   const navigate = useNavigate();
-  const goToService = (key) => navigate(`/hizmetlerimiz/${key}`);
+
+  const goToService = (key) => {
+    markAppNav();
+    window.open(`/#/hizmetlerimiz/${key}`, '_blank');
+  };
+
+  const goToContact = () => {
+    markAppNav();
+    navigate('/', { state: { scrollTo: 'iletisim' } });
+  };
 
   return (
     <div className="services-page">
@@ -49,7 +59,7 @@ function Services({ lang }) {
             <span className="more">{lang === 'tr' ? 'Detaylı bilgi →' : 'Learn more →'}</span>
           </div>
 
-          <div className="card c-contact" onClick={() => window.location.href='/#iletisim'}>
+          <div className="card c-contact" onClick={goToContact}>
             <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7"/></svg></div>
             <h3>{lang === 'tr' ? 'Bize Ulaşın' : 'Get in Touch'}</h3>
             <p>{lang === 'tr' ? 'Projeleriniz veya demo talepleriniz için ekibimizle iletişime geçin.' : 'Reach out to our team directly for your projects or a demo of our applications.'}</p>

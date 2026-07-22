@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { markAppNav } from '../utils/navHelpers';
 const importAllClientLogos = require.context('../assets/clients', false, /\.(png|jpe?g|svg)$/);
 const clientLogos = importAllClientLogos.keys().map(importAllClientLogos);
 
@@ -24,7 +24,15 @@ function Home({ lang }) {
     return () => clearInterval(interval);
   }, [lang]);
 
-  const goToService = (key) => navigate(`/hizmetlerimiz/${key}`);
+  const goToService = (key) => {
+   markAppNav();
+    window.open(`/#/hizmetlerimiz/${key}`, '_blank');
+  };
+
+const goToContact = () => {
+  markAppNav();
+  navigate('/', { state: { scrollTo: 'iletisim' } });
+};
 
   return (
     <>
@@ -47,9 +55,9 @@ function Home({ lang }) {
             ? 'SAP ERP ile başlayan yolculuğumuz; iş zekâsı, tedarik zinciri, müşteri ilişkileri ve e-dönüşüm alanlarında güçlenerek sürüyor.'
             : 'Our journey, which began with SAP ERP, continues to grow stronger in business intelligence, supply chain, customer relations and e-transformation.'}
         </p>
-        <a href="#iletisim" className="btn">
+        <button className="btn" onClick={goToContact}>
           {lang === 'tr' ? 'Bize Ulaşın' : 'Get in Touch'}
-        </a>
+        </button>
       </section>
 
       <div className="services" id="services">
@@ -96,7 +104,7 @@ function Home({ lang }) {
             <span className="more">{lang === 'tr' ? 'Detaylı bilgi →' : 'Learn more →'}</span>
           </div>
 
-          <div className="card c-contact" onClick={() => window.location.href='#iletisim'}>
+          <div className="card c-contact" onClick={goToContact}>
             <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7"/></svg></div>
             <h3>{lang === 'tr' ? 'Bize Ulaşın' : 'Get in Touch'}</h3>
             <p>{lang === 'tr' ? 'Projeleriniz veya demo talepleriniz için ekibimizle iletişime geçin.' : 'Reach out to our team directly for your projects or a demo of our applications.'}</p>
@@ -153,7 +161,7 @@ function Home({ lang }) {
           <div className="contact-columns">
             <div className="contact-col">
               <span className="contact-label">{lang === 'tr' ? 'Adres' : 'Address'}</span>
-              <a
+              <a 
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
                 rel="noopener noreferrer"
