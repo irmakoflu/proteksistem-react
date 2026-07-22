@@ -101,6 +101,18 @@ const tr = {
   backButton: {
     goBack: 'Geri Dön',
   },
+  footer: {
+    brand: 'Protek Yazılım',
+    rights: 'Tüm hakları saklıdır.',
+  },
+  common: {
+    learnMore: 'Detaylı bilgi →',
+    contactArrow: 'İletişim →',
+    logoAlt: 'Protek Yazılım Sistem Danışmanlık',
+    menuAria: 'Menü',
+    enLabel: 'English',
+    trLabel: 'Türkçe',
+  },
   contact: {
     title: 'İletişim',
     companyName: 'Protek Yazılım Sistem Danışmanlık',
@@ -119,6 +131,12 @@ const tr = {
     send: 'Gönder',
     successMsg: 'Mesajınız gönderildi, teşekkürler!',
     errorMsg: 'Bir hata oluştu, lütfen tekrar deneyin.',
+    mapTitle: 'Protek Yazılım Konum Haritası',
+  },
+    validation: {
+    name: 'Lütfen adınızı soyadınızı girin.',
+    email: 'Lütfen geçerli bir e-posta adresi girin.',
+    message: 'Lütfen bir mesaj yazın.',
   },
 };
 

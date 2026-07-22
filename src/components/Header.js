@@ -53,9 +53,7 @@ function Header({ lang, setLang }) {
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
-  const isServicesActive =
-    location.pathname.startsWith('/hizmetlerimiz') ||
-    (location.pathname === '/' && activeSection === 'services');
+ const isServicesActive = location.pathname === '/' && activeSection === 'services';
   const isContactActive = location.pathname.startsWith('/iletisim');
 
   return (
@@ -74,13 +72,13 @@ function Header({ lang, setLang }) {
       <header>
         <div className="navrow wrap">
           <Link to="/" className="logo-link" onClick={handleHomeClick}>
-            <img src={logo} alt="Protek Yazılım Sistem Danışmanlık" className="logo-img" />
+            <img src={logo} alt={t('common.logoAlt')} className="logo-img" />
           </Link>
 
           <button
             className="mobile-menu-btn"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={t('common.menuAria')}
           >
             {menuOpen ? (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -110,15 +108,16 @@ function Header({ lang, setLang }) {
                   {t('nav.about')}
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/hizmetlerimiz"
-                  className={isServicesActive ? 'nav-active' : ''}
-                  onClick={handleNavClick}
-                >
-                  {t('nav.services')}
-                </Link>
-              </li>
+             <li>
+  <Link
+    to="/"
+    state={{ scrollTo: 'services' }}
+    className={isServicesActive ? 'nav-active' : ''}
+    onClick={handleNavClick}
+  >
+    {t('nav.services')}
+  </Link>
+</li>
               <li>
                 <Link
                   to="/iletisim"
@@ -136,7 +135,7 @@ function Header({ lang, setLang }) {
                 >
                   <img
                     src={lang === 'tr' ? 'https://flagcdn.com/w40/gb.png' : 'https://flagcdn.com/w40/tr.png'}
-                    alt={lang === 'tr' ? 'English' : 'Türkçe'}
+                    alt={lang === 'tr' ? t('common.enLabel') : t('common.trLabel')}
                     className="flag-icon"
                   />
                 </button>

@@ -101,6 +101,18 @@ const en = {
   backButton: {
     goBack: 'Go Back',
   },
+  footer: {
+    brand: 'Protek Software',
+    rights: 'All rights reserved.',
+  },
+  common: {
+    learnMore: 'Learn more →',
+    contactArrow: 'Contact →',
+    logoAlt: 'Protek Software Systems Consulting',
+    menuAria: 'Menu',
+    enLabel: 'English',
+    trLabel: 'Türkçe',
+  },
   contact: {
     title: 'Contact',
     companyName: 'Protek Software Systems Consulting',
@@ -119,6 +131,12 @@ const en = {
     send: 'Send',
     successMsg: 'Your message has been sent, thank you!',
     errorMsg: 'Something went wrong, please try again.',
+    mapTitle: 'Protek Software Location Map',
+  },
+    validation: {
+    name: 'Please enter your full name.',
+    email: 'Please enter a valid email address.',
+    message: 'Please write a message.',
   },
 };
 

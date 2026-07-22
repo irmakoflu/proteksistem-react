@@ -1,29 +1,20 @@
 import React, { useState } from 'react';
 import BackButton from '../components/BackButton';
+import { useTranslation } from '../i18n';
 
 function Contact({ lang }) {
+  const { t } = useTranslation(lang);
+
   const mapQuery = encodeURIComponent(
     "TÜBİTAK Gebze Yerleşkesi Marmara Teknokent No:32/17 Gebze Kocaeli"
   );
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
-  const validationMessages = {
-    tr: {
-      name: 'Lütfen adınızı soyadınızı girin.',
-      email: 'Lütfen geçerli bir e-posta adresi girin.',
-      message: 'Lütfen bir mesaj yazın.',
-    },
-    en: {
-      name: 'Please enter your full name.',
-      email: 'Please enter a valid email address.',
-      message: 'Please write a message.',
-    },
-  };
 
   const handleInvalid = (e) => {
     const field = e.target.name;
-    const msg = validationMessages[lang]?.[field] || '';
+    const msg = t(`validation.${field}`);
     e.target.setCustomValidity(msg);
   };
 
@@ -57,10 +48,8 @@ function Contact({ lang }) {
       <BackButton lang={lang} />
       <section className="block contact" id="iletisim">
         <div className="wrap">
-          <h2>{lang === 'tr' ? 'İletişim' : 'Contact'}</h2>
-          <p className="contact-company">
-            {lang === 'tr' ? 'Protek Yazılım Sistem Danışmanlık' : 'Protek Software Systems Consulting'}
-          </p>
+          <h2>{t('contact.title')}</h2>
+          <p className="contact-company">{t('contact.companyName')}</p>
 
           <div className="contact-columns">
             <div className="contact-col">
@@ -69,7 +58,7 @@ function Contact({ lang }) {
                   <path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.8 12 21 12 21z"/>
                   <circle cx="12" cy="9.5" r="2.3"/>
                 </svg>
-                {lang === 'tr' ? 'Adres' : 'Address'}
+                {t('contact.address')}
               </span>
 
               <a
@@ -78,9 +67,7 @@ function Contact({ lang }) {
                 rel="noopener noreferrer"
                 className="contact-link"
               >
-                {lang === 'tr'
-                  ? 'Barış Mah. Koşu Yolu Cad. TÜBİTAK Gebze Yerleşkesi Marmara Teknokent No: 32/17 İç Kapı No: Z01, Gebze / Kocaeli'
-                  : 'Barış Mah. Koşu Yolu Cad. TÜBİTAK Gebze Campus, Marmara Technopark No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye'}
+                {t('contact.addressText')}
               </a>
             </div>
 
@@ -89,7 +76,7 @@ function Contact({ lang }) {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/>
                 </svg>
-                {lang === 'tr' ? 'Telefon' : 'Phone'}
+                {t('contact.phone')}
               </span>
               <a href="tel:+902629994323" className="contact-link">+90 262 999 4323</a>
             </div>
@@ -100,7 +87,7 @@ function Contact({ lang }) {
                   <rect x="2" y="4" width="20" height="16" rx="2"/>
                   <path d="M2 6l10 7 10-7"/>
                 </svg>
-                {lang === 'tr' ? 'E-posta' : 'Email'}
+                {t('contact.email')}
               </span>
               <a href="mailto:bilgi@proteksistem.com" className="contact-link">bilgi@proteksistem.com</a>
             </div>
@@ -113,11 +100,11 @@ function Contact({ lang }) {
                   <path d="M12 21s-7-6.2-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.8 12 21 12 21z"/>
                   <circle cx="12" cy="9.5" r="2.3"/>
                 </svg>
-                {lang === 'tr' ? 'Konum' : 'Location'}
+                {t('contact.location')}
               </span>
               <div className="contact-map-wrap">
                 <iframe
-                  title={lang === 'tr' ? 'Protek Yazılım Konum Haritası' : 'Protek Software Location Map'}
+                  title={t('contact.mapTitle')}
                   src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
                   width="100%"
                   height="100%"
@@ -134,21 +121,21 @@ function Contact({ lang }) {
                 rel="noopener noreferrer"
                 className="contact-map-link"
               >
-                {lang === 'tr' ? 'Google Haritalar\'da Aç →' : 'Open in Google Maps →'}
+                {t('contact.mapLinkText')}
               </a>
             </div>
 
             <div className="contact-form-section">
               <div className="contact-form-heading">
-                <h3>{lang === 'tr' ? 'İletişim Formu' : 'Contact Form'}</h3>
-                <p>{lang === 'tr' ? 'Size nasıl yardımcı olabiliriz?' : 'How can we help you?'}</p>
+                <h3>{t('contact.formTitle')}</h3>
+                <p>{t('contact.formSubtitle')}</p>
               </div>
 
               <form className="contact-form" onSubmit={handleSubmit}>
                 <input
                   type="text"
                   name="name"
-                  placeholder={lang === 'tr' ? 'Adınız Soyadınız' : 'Full Name'}
+                  placeholder={t('contact.namePlaceholder')}
                   value={formData.name}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
@@ -157,7 +144,7 @@ function Contact({ lang }) {
                 <input
                   type="email"
                   name="email"
-                  placeholder={lang === 'tr' ? 'E-posta Adresiniz' : 'Your Email'}
+                  placeholder={t('contact.emailPlaceholder')}
                   value={formData.email}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
@@ -166,7 +153,7 @@ function Contact({ lang }) {
                 <textarea
                   name="message"
                   rows="4"
-                  placeholder={lang === 'tr' ? 'Mesajınız' : 'Your Message'}
+                  placeholder={t('contact.messagePlaceholder')}
                   value={formData.message}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
@@ -174,20 +161,14 @@ function Contact({ lang }) {
                 ></textarea>
 
                 <button type="submit" className="btn contact-form-btn" disabled={status === 'sending'}>
-                  {status === 'sending'
-                    ? (lang === 'tr' ? 'Gönderiliyor...' : 'Sending...')
-                    : (lang === 'tr' ? 'Gönder' : 'Send')}
+                  {status === 'sending' ? t('contact.sending') : t('contact.send')}
                 </button>
 
                 {status === 'success' && (
-                  <p className="contact-form-status success">
-                    {lang === 'tr' ? 'Mesajınız gönderildi, teşekkürler!' : 'Your message has been sent, thank you!'}
-                  </p>
+                  <p className="contact-form-status success">{t('contact.successMsg')}</p>
                 )}
                 {status === 'error' && (
-                  <p className="contact-form-status error">
-                    {lang === 'tr' ? 'Bir hata oluştu, lütfen tekrar deneyin.' : 'Something went wrong, please try again.'}
-                  </p>
+                  <p className="contact-form-status error">{t('contact.errorMsg')}</p>
                 )}
               </form>
             </div>

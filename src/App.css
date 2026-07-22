@@ -682,17 +682,14 @@
 }
 /* Sticky header'ın bölüm başlıklarını örtmesini engeller */
 #home,
-#hakkimizda,
-#services {
+#hakkimizda {
   scroll-margin-top: 140px;
 }
 
 .home-anchor-offset {
   padding-top: 140px;
 }
-.services-page .services {
-  padding-top: 40px;
-}
+
 .contact-page .contact {
   padding-top: 40px;
 }

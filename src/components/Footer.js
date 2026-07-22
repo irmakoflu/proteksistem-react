@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTranslation } from '../i18n';
 
 function Footer({ lang }) {
+  const { t } = useTranslation(lang);
+
   return (
     <footer>
-      <b>Protek {lang === 'tr' ? 'Yazılım' : 'Software'}</b> © 2026 — {lang === 'tr' ? 'Tüm hakları saklıdır.' : 'All rights reserved.'}
+      <b>{t('footer.brand')}</b> © 2026 — {t('footer.rights')}
     </footer>
   );
 }
