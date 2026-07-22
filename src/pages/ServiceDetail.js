@@ -1,66 +1,71 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import servicesData from '../data/servicesData';
+import { useTranslation } from '../i18n';
 import BackButton from '../components/BackButton';
 
 function ServiceDetail({ lang }) {
   const { serviceKey } = useParams();
   const navigate = useNavigate();
-  const s = servicesData[serviceKey];
+  const { t } = useTranslation(lang);
+  const meta = servicesData[serviceKey];
 
-  if (!s) {
+  if (!meta) {
     return (
       <div className="service-detail-page">
-        <BackButton lang={lang}/>
+        <BackButton lang={lang} />
         <div className="wrap" style={{ padding: '100px 24px', textAlign: 'center' }}>
-          <h2>{lang === 'tr' ? 'Hizmet bulunamadı' : 'Service not found'}</h2>
+          <h2>{t('serviceDetail.notFound')}</h2>
           <Link to="/hizmetlerimiz" className="btn">
-            {lang === 'tr' ? 'Hizmetlerimize Dön' : 'Back to Services'}
+            {t('serviceDetail.backToServices')}
           </Link>
         </div>
       </div>
     );
   }
 
-  const targetEmail = s.email || 'bilgi@proteksistem.com';
+  const title = t(`services.${serviceKey}.title`);
+  const body = t(`services.${serviceKey}.body`);
+  const features = t(`services.${serviceKey}.features`) || [];
+  const targetEmail = meta.email || 'bilgi@proteksistem.com';
 
   return (
     <div className="service-detail-page">
-      <BackButton lang={lang}/>
-   <div
-  className="service-detail-hero"
-  style={{
-    backgroundImage: s.image ? `url(${s.image})` : 'none',
-    backgroundColor: s.image ? '#0F1E33' : s.color,
-  }}
->
-  {s.image && <div className="service-detail-hero-overlay"></div>}
-  <div className="service-detail-hero-content">
-    <h1>{s.title}</h1>
-  </div>
-</div>
+      <BackButton lang={lang} />
+      <div
+        className="service-detail-hero"
+        style={{
+          backgroundImage: meta.image ? `url(${meta.image})` : 'none',
+          backgroundColor: meta.image ? '#0F1E33' : meta.color,
+        }}
+      >
+        {meta.image && <div className="service-detail-hero-overlay"></div>}
+        <div className="service-detail-hero-content">
+          <h1>{title}</h1>
+        </div>
+      </div>
       <div className="wrap service-detail-body">
-        <p className="service-detail-lead">{s.body}</p>
+        <p className="service-detail-lead">{body}</p>
 
         <h4>
           {serviceKey === 'ik'
-            ? (lang === 'tr' ? 'Neden Protek?' : 'Why Protek?')
-            : (lang === 'tr' ? 'Sunduğumuz Çözümler:' : 'Our Solutions:')}
+            ? t('serviceDetail.whyProtek')
+            : t('serviceDetail.ourSolutions')}
         </h4>
 
         <ul className="service-detail-list">
-          {s.features.map((f, i) => <li key={i}>{f}</li>)}
+          {features.map((f, i) => <li key={i}>{f}</li>)}
         </ul>
 
         <div className="service-detail-actions">
           <a
-            href={`mailto:${targetEmail}?subject=Bilgi Talebi: ${s.title}`}
+            href={`mailto:${targetEmail}?subject=Bilgi Talebi: ${title}`}
             className="btn"
           >
-            {lang === 'tr' ? 'Bilgi Talep Et' : 'Request Information'}
+            {t('serviceDetail.requestInfo')}
           </a>
           <Link to="/hizmetlerimiz" className="service-detail-back">
-            {lang === 'tr' ? '← Tüm Hizmetler' : '← All Services'}
+            {t('serviceDetail.allServices')}
           </Link>
         </div>
       </div>

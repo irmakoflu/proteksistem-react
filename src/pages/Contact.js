@@ -8,8 +8,27 @@ function Contact({ lang }) {
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
+  const validationMessages = {
+    tr: {
+      name: 'Lütfen adınızı soyadınızı girin.',
+      email: 'Lütfen geçerli bir e-posta adresi girin.',
+      message: 'Lütfen bir mesaj yazın.',
+    },
+    en: {
+      name: 'Please enter your full name.',
+      email: 'Please enter a valid email address.',
+      message: 'Please write a message.',
+    },
+  };
+
+  const handleInvalid = (e) => {
+    const field = e.target.name;
+    const msg = validationMessages[lang]?.[field] || '';
+    e.target.setCustomValidity(msg);
+  };
 
   const handleChange = (e) => {
+    e.target.setCustomValidity('');
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -35,7 +54,7 @@ function Contact({ lang }) {
 
   return (
     <div className="contact-page">
-     <BackButton lang={lang} />
+      <BackButton lang={lang} />
       <section className="block contact" id="iletisim">
         <div className="wrap">
           <h2>{lang === 'tr' ? 'İletişim' : 'Contact'}</h2>
@@ -52,7 +71,7 @@ function Contact({ lang }) {
                 </svg>
                 {lang === 'tr' ? 'Adres' : 'Address'}
               </span>
-              
+
               <a
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
@@ -108,7 +127,7 @@ function Contact({ lang }) {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              
+
               <a
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
@@ -132,6 +151,7 @@ function Contact({ lang }) {
                   placeholder={lang === 'tr' ? 'Adınız Soyadınız' : 'Full Name'}
                   value={formData.name}
                   onChange={handleChange}
+                  onInvalid={handleInvalid}
                   required
                 />
                 <input
@@ -140,6 +160,7 @@ function Contact({ lang }) {
                   placeholder={lang === 'tr' ? 'E-posta Adresiniz' : 'Your Email'}
                   value={formData.email}
                   onChange={handleChange}
+                  onInvalid={handleInvalid}
                   required
                 />
                 <textarea
@@ -148,6 +169,7 @@ function Contact({ lang }) {
                   placeholder={lang === 'tr' ? 'Mesajınız' : 'Your Message'}
                   value={formData.message}
                   onChange={handleChange}
+                  onInvalid={handleInvalid}
                   required
                 ></textarea>
 

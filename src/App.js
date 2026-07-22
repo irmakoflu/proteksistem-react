@@ -11,12 +11,18 @@ import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 
 function App() {
-  const [lang, setLang] = useState('tr');
+  const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'tr');
+
+  const changeLang = (newLang) => {
+    setLang(newLang);
+    localStorage.setItem('lang', newLang);
+  };
+
   return (
     <HashRouter>
       <div className="App">
         <ScrollToHash />
-        <Header lang={lang} setLang={setLang} />
+        <Header lang={lang} setLang={changeLang} />
         <Routes>
           <Route path="/" element={<Home lang={lang} />} />
           <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />

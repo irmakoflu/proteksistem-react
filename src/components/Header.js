@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { markAppNav } from '../utils/navHelpers';
+import { useTranslation } from '../i18n';
 
 function Header({ lang, setLang }) {
   const location = useLocation();
+  const { t } = useTranslation(lang);
   const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -61,10 +63,10 @@ function Header({ lang, setLang }) {
       <div className="topbar">
         <div className="wrap">
           <a href="tel:+902629994323">
-            <span>{lang === 'tr' ? 'Tel' : 'Phone'}</span>+90 262 999 4323
+            <span>{t('topbar.phone')}</span>+90 262 999 4323
           </a>
           <a href="mailto:bilgi@proteksistem.com">
-            <span>{lang === 'tr' ? 'E-posta' : 'Email'}</span>bilgi@proteksistem.com
+            <span>{t('topbar.email')}</span>bilgi@proteksistem.com
           </a>
         </div>
       </div>
@@ -95,7 +97,7 @@ function Header({ lang, setLang }) {
             <ul>
               <li>
                 <Link to="/" className={isHomeActive ? 'nav-active' : ''} onClick={handleHomeClick}>
-                  {lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
@@ -105,7 +107,7 @@ function Header({ lang, setLang }) {
                   className={isAboutActive ? 'nav-active' : ''}
                   onClick={handleNavClick}
                 >
-                  {lang === 'tr' ? 'Hakkımızda' : 'About Us'}
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
@@ -114,7 +116,7 @@ function Header({ lang, setLang }) {
                   className={isServicesActive ? 'nav-active' : ''}
                   onClick={handleNavClick}
                 >
-                  {lang === 'tr' ? 'HİZMETLERİMİZ' : 'Services'}
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
@@ -123,14 +125,14 @@ function Header({ lang, setLang }) {
                   className={isContactActive ? 'nav-active' : ''}
                   onClick={handleNavClick}
                 >
-                  {lang === 'tr' ? 'İLETİŞİM' : 'Contact'}
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li className="lang">
                 <button
                   onClick={() => setLang(lang === 'tr' ? 'en' : 'tr')}
                   className="lang-toggle-btn"
-                  title={lang === 'tr' ? 'Switch to English' : "Türkçe'ye geç"}
+                  title={t('nav.switchLang')}
                 >
                   <img
                     src={lang === 'tr' ? 'https://flagcdn.com/w40/gb.png' : 'https://flagcdn.com/w40/tr.png'}
