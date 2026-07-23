@@ -59,7 +59,7 @@ function Home({ lang }) {
         <div className="wrap">
           <div className="services-heading">
             <span className="services-kicker">
-              {t('home.whoWeAre')}
+               {t('home.ourTeam')}
             </span>
             <h2>{t('home.aboutTitle')}</h2>
           </div>
@@ -125,13 +125,6 @@ function Home({ lang }) {
             <span className="more">{t('common.learnMore')}</span>
           </div>
 
-          <div className="card c-ik" onClick={() => goToService('ik')}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
-            <h3>{t('services.ik.title')}</h3>
-            <p>{t('services.ik.cardDesc')}</p>
-            <span className="more">{t('common.learnMore')}</span>
-          </div>
-
           <div className="card c-contact" onClick={goToContact}>
             <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7"/></svg></div>
             <h3>{t('contactCard.title')}</h3>
@@ -141,6 +134,29 @@ function Home({ lang }) {
 
         </div>
       </div>
+
+      <section className="block hr-section home-anchor-offset" id="insan-kaynaklari">
+        <div className="wrap">
+          <div className="services-heading">
+            <span className="services-kicker">
+              {t('home.ourTeam')}
+            </span>
+            <h2>{t('services.ik.title')}</h2>
+          </div>
+
+          <div className="hr-content">
+            <div className="hr-icon">
+              <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+            </div>
+            <p className="hr-lead">{t('services.ik.body')}</p>
+            <ul className="service-detail-list hr-list">
+              {(t('services.ik.features') || []).map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

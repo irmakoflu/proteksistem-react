@@ -25,10 +25,15 @@ const tr = {
     aboutP2: 'SAP ERP ile başlayan çözüm serüvenimiz; iş zekâsı, tedarik zinciri yönetimi, müşteri ilişkileri ve e-dönüşüm gibi alanlarda güçlenerek devam ediyor.',
     whatWeOffer: 'NELER SUNUYORUZ',
     ourServices: 'Hizmetlerimiz',
+    ourTeam: 'EKİBİMİZ',
   },
-  common: {
+    common: {
     learnMore: 'Detaylı bilgi →',
     contactArrow: 'İletişim →',
+    logoAlt: 'Protek Yazılım Sistem Danışmanlık',
+    menuAria: 'Menü',
+    enLabel: 'English',
+    trLabel: 'Türkçe',
   },
   services: {
     erp: {
@@ -105,14 +110,7 @@ const tr = {
     brand: 'Protek Yazılım',
     rights: 'Tüm hakları saklıdır.',
   },
-  common: {
-    learnMore: 'Detaylı bilgi →',
-    contactArrow: 'İletişim →',
-    logoAlt: 'Protek Yazılım Sistem Danışmanlık',
-    menuAria: 'Menü',
-    enLabel: 'English',
-    trLabel: 'Türkçe',
-  },
+
   contact: {
     title: 'İletişim',
     companyName: 'Protek Yazılım Sistem Danışmanlık',

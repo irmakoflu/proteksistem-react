@@ -699,3 +699,15 @@
 .contact-page .contact {
   padding-top: 40px;
 }
+
+/* İnsan Kaynakları bölümü */
+.hr-section{background:var(--white);}
+.hr-content{max-width:680px;margin:0 auto;text-align:center;}
+.hr-icon{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 26px;background:#96472F;
+}
+.hr-icon svg{width:28px;height:28px;stroke:#fff;}
+.hr-lead{font-size:15.5px;color:var(--text);line-height:1.7;margin-bottom:30px;}
+.hr-list{text-align:left;max-width:600px;margin:0 auto;}

@@ -25,10 +25,16 @@ const en = {
     aboutP2: 'Our solutions journey, which began with SAP ERP, continues to grow stronger in areas such as business intelligence, supply chain management, customer relations and e-transformation.',
     whatWeOffer: 'WHAT WE OFFER',
     ourServices: 'Our Services',
+    ourTeam: 'OUR TEAM',
   },
-  common: {
+  
+   common: {
     learnMore: 'Learn more →',
     contactArrow: 'Contact →',
+    logoAlt: 'Protek Software Systems Consulting',
+    menuAria: 'Menu',
+    enLabel: 'English',
+    trLabel: 'Türkçe',
   },
   services: {
     erp: {
@@ -105,14 +111,7 @@ const en = {
     brand: 'Protek Software',
     rights: 'All rights reserved.',
   },
-  common: {
-    learnMore: 'Learn more →',
-    contactArrow: 'Contact →',
-    logoAlt: 'Protek Software Systems Consulting',
-    menuAria: 'Menu',
-    enLabel: 'English',
-    trLabel: 'Türkçe',
-  },
+ 
   contact: {
     title: 'Contact',
     companyName: 'Protek Software Systems Consulting',

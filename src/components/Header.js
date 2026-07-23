@@ -13,7 +13,7 @@ function Header({ lang, setLang }) {
   useEffect(() => {
     if (location.pathname !== '/') return;
 
-    const sectionIds = ['home', 'hakkimizda', 'services'];
+    const sectionIds = ['home', 'hakkimizda', 'services', 'insan-kaynaklari'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,6 +54,7 @@ function Header({ lang, setLang }) {
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
   const isServicesActive = location.pathname === '/' && activeSection === 'services';
+  const isHRActive = location.pathname === '/' && activeSection === 'insan-kaynaklari';
   const isContactActive = location.pathname.startsWith('/iletisim');
 
   return (
@@ -119,8 +120,17 @@ function Header({ lang, setLang }) {
                   <Link to="/hizmetlerimiz/crm" onClick={handleNavClick}>{t('services.crm.title')}</Link>
                   <Link to="/hizmetlerimiz/edefter" onClick={handleNavClick}>{t('services.edefter.title')}</Link>
                   <Link to="/hizmetlerimiz/ui5" onClick={handleNavClick}>{t('services.ui5.title')}</Link>
-                  <Link to="/hizmetlerimiz/ik" onClick={handleNavClick}>{t('services.ik.title')}</Link>
                 </div>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  state={{ scrollTo: 'insan-kaynaklari' }}
+                  className={isHRActive ? 'nav-active' : ''}
+                  onClick={handleNavClick}
+                >
+                  {t('services.ik.title')}
+                </Link>
               </li>
               <li>
                 <Link
