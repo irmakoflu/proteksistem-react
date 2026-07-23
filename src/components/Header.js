@@ -53,7 +53,9 @@ function Header({ lang, setLang }) {
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
-  const isServicesActive = location.pathname === '/' && activeSection === 'services';
+  const isServicesActive =
+  (location.pathname === '/' && activeSection === 'services') ||
+  location.pathname.startsWith('/hizmetlerimiz');
   const isHRActive = location.pathname === '/' && activeSection === 'insan-kaynaklari';
   const isContactActive = location.pathname.startsWith('/iletisim');
 

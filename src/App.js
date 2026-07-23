@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToHash from './components/ScrollToHash';
 import RequireAppNav from './components/RequireAppNav';
+import FloatingContactButton from './components/FloatingContactButton';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
           <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
         </Routes>
+        <FloatingContactButton lang={lang} />
         <Footer lang={lang} />
       </div>
     </HashRouter>

@@ -1,9 +1,9 @@
 :root{
-    --ink:#0F1E33;
-    --slate:#1C3450;
-    --brass:#C25A2E;
-    --brass-light:#FA8352;
-    --paper:#F7F7F8;
+    --ink:#262626;
+    --slate:#4A4A4A;
+    --brass:#D6301F;
+    --brass-light:#F1604A;
+    --paper:#F7F7F7;
     --white:#FFFFFF;
     --text:#3E4852;
     --text-light:#7A8590;
@@ -35,7 +35,7 @@
   .topbar span{color:var(--brass-light);margin-right:6px;}
 
   /* Header / nav */
-  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
   .navrow{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
   .logo{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:.2px;}
   .logo span{color:var(--brass);}
@@ -168,17 +168,21 @@
 }
   .grid{
     max-width:1180px;margin:0 auto;display:grid;
-    grid-template-columns:repeat(3,1fr);gap:26px;
+    grid-template-columns:repeat(4,1fr);gap:22px;
   }
  .card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:8px;
-  padding:44px 30px 36px;
+  padding:38px 24px 32px;
   text-align:center;
   box-shadow:0 4px 16px rgba(15,30,51,.05);
   transition:.25s;
   cursor:pointer;
+}
+
+@media (max-width: 980px){
+  .grid{grid-template-columns:repeat(2,1fr);}
 }
 .card:hover{
   transform:translateY(-6px);
@@ -194,7 +198,7 @@
 }
 .icon svg{width:28px;height:28px;stroke:#fff;}
 
-.card.c-erp .icon{background:#1C3450;}
+.card.c-erp .icon{background:var(--slate);}
 .card.c-crm .icon{background:#146357;}
 .card.c-edefter .icon{background:#A9762E;}
 .card.c-ui5 .icon{background:#4A3E86;}
@@ -447,7 +451,7 @@
 
   /* Service modal */
   .modal-overlay{
-    position:fixed;inset:0;background:rgba(9,16,28,.72);z-index:300;
+    position:fixed;inset:0;background:rgba(20,20,20,.72);z-index:300;
     display:flex;align-items:center;justify-content:center;padding:24px;
     opacity:0;visibility:hidden;transition:.22s ease;
   }
@@ -583,7 +587,7 @@
 .service-detail-hero-overlay{
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15,30,51,.55) 0%, rgba(15,30,51,.75) 100%);
+  background: linear-gradient(180deg, rgba(38,38,38,.55) 0%, rgba(38,38,38,.75) 100%);
   z-index: 0;
 }
 
@@ -700,14 +704,76 @@
   padding-top: 40px;
 }
 
-/* İnsan Kaynakları bölümü */
-.hr-section{background:var(--white);}
-.hr-content{max-width:680px;margin:0 auto;text-align:center;}
-.hr-icon{
-  width:64px;height:64px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 26px;background:#96472F;
+/* Geri butonu ile İletişim başlığı üst üste binmesin (orta genişlikte pencere) */
+@media (max-width: 1340px) {
+  .contact-page .contact .wrap {
+    padding-left: 64px;
+  }
 }
-.hr-icon svg{width:28px;height:28px;stroke:#fff;}
-.hr-lead{font-size:15.5px;color:var(--text);line-height:1.7;margin-bottom:30px;}
-.hr-list{text-align:left;max-width:600px;margin:0 auto;}
+
+@media (max-width: 700px) {
+  .contact-page .contact .wrap {
+    padding-left: 56px;
+  }
+}
+
+/* İnsan Kaynakları bölümü */
+.hr-section {
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+}
+
+.hr-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hr-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.20;
+  z-index: 0;
+}
+
+.hr-section .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.floating-contact-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: var(--brass);
+  color: #fff;
+  border: none;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 8px 0 0 8px;
+  z-index: 999;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-contact-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-contact-btn span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+.floating-contact-btn:hover {
+  background: var(--brass-light);
+}

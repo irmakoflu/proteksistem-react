@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
+import ikBg from '../assets/services/ik-bg.jpg';
 const importAllClientLogos = require.context('../assets/clients', false, /\.(png|jpe?g|svg)$/);
 const clientLogos = importAllClientLogos.keys().map(importAllClientLogos);
 
@@ -125,17 +126,14 @@ function Home({ lang }) {
             <span className="more">{t('common.learnMore')}</span>
           </div>
 
-          <div className="card c-contact" onClick={goToContact}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 4h16v16H4V4z"/><path d="M4 6l8 7 8-7"/></svg></div>
-            <h3>{t('contactCard.title')}</h3>
-            <p>{t('contactCard.desc')}</p>
-            <span className="more">{t('common.contactArrow')}</span>
-          </div>
-
         </div>
       </div>
 
-      <section className="block hr-section home-anchor-offset" id="insan-kaynaklari">
+      <section
+        className="block hr-section home-anchor-offset"
+        id="insan-kaynaklari"
+        style={{ '--hr-bg-image': `url(${ikBg})` }}
+      >
         <div className="wrap">
           <div className="services-heading">
             <span className="services-kicker">
@@ -145,9 +143,6 @@ function Home({ lang }) {
           </div>
 
           <div className="hr-content">
-            <div className="hr-icon">
-              <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
-            </div>
             <p className="hr-lead">{t('services.ik.body')}</p>
             <ul className="service-detail-list hr-list">
               {(t('services.ik.features') || []).map((f, i) => (
