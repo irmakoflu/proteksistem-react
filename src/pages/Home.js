@@ -72,6 +72,15 @@ function Home({ lang }) {
             <p>
               {t('home.aboutP2')}
             </p>
+
+            <h4 style={{ marginTop: 24, marginBottom: 12 }}>
+              {t('home.aboutHighlightsTitle')}
+            </h4>
+            <ul className="service-detail-list" style={{ textAlign: 'left', maxWidth: 640, margin: '0 auto' }}>
+              {(t('home.aboutHighlightsList') || []).map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
           </div>
 
           <div className="logo-marquee">
