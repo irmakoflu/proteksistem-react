@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proteksistem-react/static/css/main.6616df60.css",
-    "main.js": "/proteksistem-react/static/js/main.2e7c6e16.js",
+    "main.css": "/proteksistem-react/static/css/main.2230a9ae.css",
+    "main.js": "/proteksistem-react/static/js/main.eeb0fc1d.js",
     "static/js/453.244fa0f8.chunk.js": "/proteksistem-react/static/js/453.244fa0f8.chunk.js",
     "static/media/ik-bg.jpg": "/proteksistem-react/static/media/ik-bg.b4e919176ba508f29ae5.jpg",
     "static/media/e-defter.jpg": "/proteksistem-react/static/media/e-defter.694b28aa65c27d169d7e.jpg",
@@ -40,12 +40,12 @@
     "static/media/hunca.png": "/proteksistem-react/static/media/hunca.4894c54b8f29674e325e.png",
     "static/media/hidromek.png": "/proteksistem-react/static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "/proteksistem-react/index.html",
-    "main.6616df60.css.map": "/proteksistem-react/static/css/main.6616df60.css.map",
-    "main.2e7c6e16.js.map": "/proteksistem-react/static/js/main.2e7c6e16.js.map",
+    "main.2230a9ae.css.map": "/proteksistem-react/static/css/main.2230a9ae.css.map",
+    "main.eeb0fc1d.js.map": "/proteksistem-react/static/js/main.eeb0fc1d.js.map",
     "453.244fa0f8.chunk.js.map": "/proteksistem-react/static/js/453.244fa0f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6616df60.css",
-    "static/js/main.2e7c6e16.js"
+    "static/css/main.2230a9ae.css",
+    "static/js/main.eeb0fc1d.js"
   ]
 }
