@@ -3,7 +3,7 @@
     --slate:#4A4A4A;
     --brass:#D6301F;
     --brass-light:#F1604A;
-    --paper:#F7F7F7;
+    --paper:#F7F7F8;
     --white:#FFFFFF;
     --text:#3E4852;
     --text-light:#7A8590;
@@ -439,6 +439,16 @@
 
 .contact-form-status.error {
   color: #EB5757;
+}
+
+/* Honeypot: gerçek kullanıcıdan tamamen gizli, botlardan gizlenmiyor (DOM'da var) */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 800px) {

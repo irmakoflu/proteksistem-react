@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import BackButton from '../components/BackButton';
 import { useTranslation } from '../i18n';
 
+// Basit sanitizasyon: HTML/script enjeksiyonuna zemin hazırlayan karakterleri
+// gönderim öncesi temizler. Bu, React'in zaten sağladığı JSX-escape korumasına
+// EK bir savunma katmanıdır — asıl güvenlik her zaman render tarafında (React)
+// sağlanıyor, ama e-posta/backend tarafında da temiz veri gitmesi için faydalı.
+const sanitizeInput = (value) => {
+  return value
+    .replace(/<[^>]*>?/g, '') // HTML etiketlerini kaldır (<script>, <img onerror=...> vb.)
+    .replace(/javascript:/gi, '') // javascript: pseudo-protokolünü engelle
+    .trim();
+};
+
 function Contact({ lang }) {
   const { t } = useTranslation(lang);
 
@@ -25,12 +36,37 @@ function Contact({ lang }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Honeypot: botlar genelde tüm inputları doldurur, gerçek kullanıcılar
+    // görmediği bu alanı boş bırakır. Doluysa sessizce reddet.
+    const honeypot = e.target.elements['company_website']?.value;
+    if (honeypot) {
+      return;
+    }
+
     setStatus('sending');
+
+    const cleanName = sanitizeInput(formData.name);
+    const cleanEmail = sanitizeInput(formData.email);
+    const cleanMessage = sanitizeInput(formData.message);
+
+    // Ekstra doğrulama: sanitize sonrası alanlardan biri boşaldıysa
+    // (yani sadece zararlı/etiket içerikten oluşuyorsa) gönderme.
+    if (!cleanName || !cleanEmail || !cleanMessage) {
+      setStatus('error');
+      return;
+    }
+
     try {
+      const payload = new FormData();
+      payload.append('name', cleanName);
+      payload.append('email', cleanEmail);
+      payload.append('message', cleanMessage);
+
       const res = await fetch('https://formspree.io/f/mzdnvnqz', {
         method: 'POST',
         headers: { Accept: 'application/json' },
-        body: new FormData(e.target),
+        body: payload,
       });
       if (res.ok) {
         setStatus('success');
@@ -105,8 +141,6 @@ function Contact({ lang }) {
                 ></iframe>
               </div>
               <a
-
-              
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -123,6 +157,18 @@ function Contact({ lang }) {
               </div>
 
               <form className="contact-form" onSubmit={handleSubmit}>
+                {/* Honeypot alanı: gerçek kullanıcılar görmez (CSS ile gizli),
+                    botlar genelde doldurur. Ekran okuyucular atlasın diye
+                    tabIndex=-1 ve autoComplete="off" eklendi. */}
+                <input
+                  type="text"
+                  name="company_website"
+                  className="hp-field"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
                 <input
                   type="text"
                   name="name"
@@ -130,6 +176,7 @@ function Contact({ lang }) {
                   value={formData.name}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
+                  maxLength={100}
                   required
                 />
                 <input
@@ -139,6 +186,7 @@ function Contact({ lang }) {
                   value={formData.email}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
+                  maxLength={150}
                   required
                 />
                 <textarea
@@ -148,6 +196,7 @@ function Contact({ lang }) {
                   value={formData.message}
                   onChange={handleChange}
                   onInvalid={handleInvalid}
+                  maxLength={1000}
                   required
                 ></textarea>
 
