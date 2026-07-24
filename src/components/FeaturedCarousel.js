@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 
 const icons = [
@@ -24,7 +22,6 @@ const icons = [
 
 function FeaturedCarousel({ lang }) {
   const { t } = useTranslation(lang);
-  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
 
   const projects = t('home.featuredProjects') || [];
@@ -36,13 +33,15 @@ function FeaturedCarousel({ lang }) {
   const goPrev = () => setIndex((i) => (i - 1 + total) % total);
   const goNext = () => setIndex((i) => (i + 1) % total);
 
-  const goToContact = () => {
-    markAppNav();
-    navigate('/iletisim');
-  };
-
   return (
-    <section className="featured-carousel">
+    <section className="featured-carousel" id="featured-urunler">
+      <div className="wrap">
+      <div className="services-heading featured-carousel-heading">
+          <span className="services-kicker">{t('home.featuredKicker')}</span>
+          <h2>{t('home.featuredSectionLabel')}</h2>
+        </div>
+      </div>
+
       <div className="wrap featured-carousel-wrap">
         <button
           className="carousel-arrow carousel-arrow-left"
@@ -59,9 +58,6 @@ function FeaturedCarousel({ lang }) {
             <span className="featured-carousel-badge">{current.kicker}</span>
             <h2>{current.title}</h2>
             <p>{current.desc}</p>
-            <button className="btn featured-carousel-cta" onClick={goToContact}>
-              {t('home.featuredCarouselCta')} <span aria-hidden="true">→</span>
-            </button>
           </div>
 
           <div className="featured-carousel-visual">

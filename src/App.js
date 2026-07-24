@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'tr');
@@ -28,14 +29,17 @@ function App() {
   return (
     <HashRouter>
       <div className="App">
-        <ScrollToHash />
+       <ScrollToHash />
         <Header lang={lang} setLang={changeLang} />
-        <Routes>
-          <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />
-          <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
-          <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
-        </Routes>
+        <main className="page-content">
+          <Routes>
+            <Route path="/" element={<Home lang={lang} />} />
+            <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />
+            <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
+            <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
+             <Route path="*" element={<NotFound lang={lang} />} />
+          </Routes>
+        </main>
         <FloatingContactButton lang={lang} />
         <Footer lang={lang} />
       </div>

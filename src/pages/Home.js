@@ -34,6 +34,10 @@ function Home({ lang }) {
     markAppNav();
     navigate('/iletisim');
   };
+  const scrollToFeatured = () => {
+    const el = document.getElementById('featured-urunler');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -52,7 +56,7 @@ function Home({ lang }) {
         <p>
           {t('home.heroText')}
         </p>
-        <button className="btn" onClick={goToContact}>
+        <button className="btn" onClick={scrollToFeatured}>
           {t('home.getInTouch')}
         </button>
       </section>
@@ -61,7 +65,7 @@ function Home({ lang }) {
         <div className="wrap">
           <div className="services-heading">
             <span className="services-kicker">
-               {t('home.ourTeam')}
+               {t('home.whoWeAre')}
             </span>
             <h2>{t('home.aboutTitle')}</h2>
           </div>

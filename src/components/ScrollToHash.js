@@ -10,7 +10,7 @@ function ScrollToHash() {
 
     if (target && cameFromApp) {
       const el = document.getElementById(target);
-      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
     } else {
       const topbarHeight = document.querySelector('.topbar')?.offsetHeight || 0;
       window.scrollTo(0, topbarHeight);

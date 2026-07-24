@@ -19,7 +19,7 @@ function Header({ lang, setLang }) {
   useEffect(() => {
     if (location.pathname !== '/') return;
 
-    const sectionIds = ['home', 'hakkimizda', 'services', 'insan-kaynaklari'];
+   const sectionIds = ['home', 'hakkimizda', 'featured-urunler', 'services', 'insan-kaynaklari'];
     const observer = new IntersectionObserver(
       (entries) => {
         if (lockRef.current) return; // scroll devam ederken ara bölümleri yoksay
@@ -93,6 +93,7 @@ function Header({ lang, setLang }) {
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
+   const isFeaturedActive = location.pathname === '/' && activeSection === 'featured-urunler';
   const isServicesActive =
     (location.pathname === '/' && activeSection === 'services') ||
     location.pathname.startsWith('/hizmetlerimiz');
@@ -140,6 +141,17 @@ function Header({ lang, setLang }) {
                   {t('nav.about')}
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/"
+                  state={{ scrollTo: 'featured-urunler' }}
+                  className={isFeaturedActive ? 'nav-active' : ''}
+                  onClick={() => handleNavClick('featured-urunler')}
+                >
+                  {t('nav.products')}
+                </Link>
+              </li>
+
               <li className="dropdown">
                 <Link
                   to="/"
