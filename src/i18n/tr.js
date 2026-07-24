@@ -171,6 +171,24 @@ const tr = {
     email: 'Lütfen geçerli bir e-posta adresi girin.',
     message: 'Lütfen bir mesaj yazın.',
   },
+  securityPolicy: {
+    docNo: 'Doküman No: POL.01',
+    issueDate: 'Yayım Tarihi: 20.02.2026',
+    revNo: 'Rev. No: 00',
+    title: 'Bilgi Güvenliği Politikası',
+    paragraphs: [
+      'Kurumumuz gizlilik, bütünlük ve tüm fiziksel ve elektronik bilgi varlıklarını korumayı taahhüt etmektedir. Bilgi ve bilgi güvenliği gereksinimleri kurumsal hedeflerimiz ile aynı doğrultuda olacaktır.',
+      'Kurumumuz yönetimi değişime açık, iyi eğitim almış, konusunda yetkin personel istihdamı sağlayacak ve sektör içerisinde rakiplerimizle rekabeti sağlayacak finansmanı sağlamak, yeterli donanım ve altyapıyı bulunduracaktır. Bu altyapı ve personel ile birlikte gerekli finansmanda sağlanacaktır.',
+      'İş sürekliliği ve acil durum planları, veri yedekleme prosedürleri, virüslerden ve bilgisayar korsanlarından sakınma, erişim kontrol sistemleri ve bilgi güvenliği ihlal bildirimi temel faaliyetlerimizin temel taşlarını oluşturacaktır.',
+      'Yapılan risk değerlendirmeleri sonucunda elde edilen açıklıklar ve tehditler bertaraf edilerek müşteri ve personelimizin bilgilerine güvenli erişim sağlanacaktır. Ayrıca risk değerlendirmeleri sonucunda amaçlarımızı belirleyip bu amaçların başarılması için gerekli olan kaynaklar ve şartlar sağlanacaktır.',
+      'Bu politikayı gerçekleştirmek için başta çalışanlarımızın Bilgi Güvenliği Yönetim Sistemi şartlarını çalışma biçimi haline getirmelerini beklemekteyiz. Tüm personel ve belirli üçüncü tarafların Bilgi Güvenliği Yönetim Sistemi ile ilgili uygun eğitimleri alması sağlanacaktır.',
+      'Bilgi güvenliği ile ilgili uygulanabilir şartlar ve bu şartların getirdiği fırsatlar ve gereklilikler yerine getirilecek ve bu şartlar sürekli iyileştirilecektir. Ayrıca, bölüm personelimizin ve tüm ilgili tarafların bu sisteme adaptasyonu sağlanacaktır.',
+      'Bilgi Güvenliği Politikamız yılda bir kez ya da firmamızla ilgili önemli değişikliklerin olması durumunda uygunluğunu, doğruluğunu ve etkinliğini sağlamak için yönetim ve birim sorumlularının katılımıyla gözden geçirilmekte ve güncelliği sağlanmaktadır.',
+    ],
+    signature1: 'Protek Yazılım Sistem Danışmanlık Bilgisayar Sanayi ve Ticaret Limited Şirketi',
+    signature2: 'MUSTAFA ERÖZTEKİN',
+    signature3: 'Genel Müdür',
+  },
 };
 
 export default tr;

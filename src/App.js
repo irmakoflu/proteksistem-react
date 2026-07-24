@@ -11,6 +11,7 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import InfoSecurityPolicy from './pages/InfoSecurityPolicy';
 
 function App() {
   const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'tr');
@@ -37,7 +38,8 @@ function App() {
             <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />
             <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
             <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
-             <Route path="*" element={<NotFound lang={lang} />} />
+            <Route path="/bilgi-guvenligi-politikasi" element={<RequireAppNav><InfoSecurityPolicy lang={lang} /></RequireAppNav>} />
+            <Route path="*" element={<NotFound lang={lang} />} />
           </Routes>
         </main>
         <FloatingContactButton lang={lang} />

@@ -803,7 +803,7 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.20;
+  opacity: 0;
   z-index: 0;
 }
 
@@ -1025,4 +1025,37 @@ footer {
     transform: none;
     font-size: 0.8em;
   }
+  @media (max-width: 700px) {
+  .featured-carousel-wrap {
+    position: relative;
+    gap: 0;
+  }
+
+  .featured-carousel-content {
+    width: 100%;
+  }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .carousel-arrow-left {
+    left: -4px;
+  }
+
+  .carousel-arrow-right {
+    right: -4px;
+  }
+
+  .featured-carousel-text p {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+}
 }

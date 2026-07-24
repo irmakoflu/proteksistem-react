@@ -16,9 +16,6 @@ const sanitizeInput = (value) => {
 function Contact({ lang }) {
   const { t } = useTranslation(lang);
 
-  const mapQuery = encodeURIComponent(
-    "TÜBİTAK Gebze Yerleşkesi Marmara Teknokent No:32/17 Gebze Kocaeli"
-  );
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
@@ -129,9 +126,9 @@ function Contact({ lang }) {
                 {t('contact.location')}
               </span>
               <div className="contact-map-wrap">
-                <iframe
+               <iframe
                   title={t('contact.mapTitle')}
-                  src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d235.4149398459281!2d29.462633781081!3d40.78909292132639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1str!2str!4v1763541911264!5m2!1str!2str"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

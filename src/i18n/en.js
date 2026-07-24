@@ -151,7 +151,7 @@ const en = {
     title: 'Contact',
     companyName: 'Protek Software Systems Consulting',
     address: 'Address',
-    addressText: 'Barış Mah. Koşu Yolu Cad. TÜBİTAK Gebze Campus, Marmara Technopark No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye',
+    addressText: 'Barış District, Koşu Yolu Street, TÜBİTAK Gebze Campus, Marmara Technopark No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye',
     phone: 'Phone',
     email: 'Email',
     location: 'Location',
@@ -171,6 +171,20 @@ const en = {
     name: 'Please enter your full name.',
     email: 'Please enter a valid email address.',
     message: 'Please write a message.',
+  },
+ securityPolicy: {
+    title: 'Information Security Policy',
+    paragraphs: [
+      'Our organization is committed to protecting confidentiality, integrity, and all of our physical and electronic information assets. Information and information security requirements will be aligned with our corporate goals.',
+      "Our organization's management will ensure the employment of personnel who are open to change, well-trained, and competent in their fields, and will provide the financing, as well as maintain adequate hardware and infrastructure, necessary to ensure competitiveness with our rivals in the sector. Along with this infrastructure and personnel, the necessary financing will also be provided. Business continuity and emergency plans, data backup procedures, protection from viruses and hackers, access control systems, and information security breach notification will form the cornerstones of our core activities. By eliminating the vulnerabilities and threats identified as a result of risk assessments, secure access to the information of our customers and personnel will be ensured.",
+      'Furthermore, as a result of risk assessments, our objectives will be determined, and the resources and conditions necessary to achieve these objectives will be provided.',
+      'To realize this policy, we primarily expect our employees to adopt the requirements of the Information Security Management System as their way of working. It will be ensured that all personnel and specific third parties receive appropriate training regarding the Information Security Management System.',
+      'Applicable requirements related to information security, as well as the opportunities and necessities brought about by these requirements, will be fulfilled, and these conditions will be continuously improved. In addition, the adaptation of our department personnel and all interested parties to this system will be ensured.',
+      'To ensure its suitability, accuracy, and effectiveness, our Information Security Policy is reviewed and kept up to date once a year, or in the event of significant changes regarding our company, with the participation of management and unit supervisors.',
+    ],
+    signature1: 'Protek Yazılım Sistem Danışmanlık Bilgisayar Sanayi ve Ticaret Limited Şirketi',
+    signature2: 'MUSTAFA ERÖZTEKİN',
+    signature3: 'General Manager',
   },
 };
 
