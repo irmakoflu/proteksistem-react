@@ -32,6 +32,29 @@ const en = {
       'An "Engineering and Change Management System" project for a company in the automotive sector',
       'Ongoing development of a home healthcare services platform',
     ],
+    featuredCarouselCta: 'Get Info',
+    featuredProjects: [
+      {
+        kicker: 'FIXED ASSET MANAGEMENT',
+        title: 'Fixed Asset Inventory & Control Cockpit',
+        desc: 'We are developing a management tool that lets companies effectively track their long-term physical assets. The system brings asset tracking, maintenance management, inventory and custody tracking, and reporting together on a single platform. A unique QR code assigned to every asset lets staff count and search items in seconds via a camera-enabled mobile app. Request and approval workflows run through Adobe Interactive Form integration over email, and a multi-user admin architecture lets several people manage the system at the same time.',
+      },
+      {
+        kicker: 'INFLATION ACCOUNTING',
+        title: 'Inflation Accounting Cockpit',
+        desc: 'To help financial statements reflect reality during periods of high inflation, we are building an inflation accounting solution aligned with VUK, IFRS, and TFRS standards. Fully integrated with inventory, fixed asset, and general ledger accounting, the system restates a company\'s asset structure and equity to their real values and separates fictitious profit from real profit. Correcting depreciation creates the fund needed to renew fixed assets, while comparisons across periods and companies become meaningful again.',
+      },
+      {
+        kicker: 'ACTIVITY TRACKING',
+        title: 'Task Assignment Optimization System',
+        desc: 'We bring staff task tracking, skill-based assignment, and remote work management together on a single platform. The system allows daily and hourly work planning, logging actual effort spent, and generating monthly reports and invoices from that data. Because both customers and staff can enter data, a mutual control mechanism keeps workforce usage efficient while surfacing unbilled activity and idle time.',
+      },
+      {
+        kicker: 'AI-POWERED WORKFORCE',
+        title: 'AI-Powered Dynamic Workforce Management',
+        desc: 'We are turning task and job assignment into a decision problem managed by a hybrid engine that combines machine learning, recommendation systems, reinforcement learning, and graph-based analysis. The system learns the relationship between staff skills and task requirements to predict workload and completion times, then produces optimal assignment decisions through optimization algorithms. Built on a .NET Core backend, a React/Angular interface, a hybrid MongoDB-PostgreSQL data layer, and Kafka/Spark infrastructure, the architecture is designed to keep learning and improving over time.',
+      },
+    ],
     whatWeOffer: 'WHAT WE OFFER',
     ourServices: 'Our Services',
     ourTeam: 'OUR TEAM',

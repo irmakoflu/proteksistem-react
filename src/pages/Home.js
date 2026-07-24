@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 import ikBg from '../assets/services/ik-bg.jpg';
+import FeaturedCarousel from '../components/FeaturedCarousel';
 const importAllClientLogos = require.context('../assets/clients', false, /\.(png|jpe?g|svg)$/);
 const clientLogos = importAllClientLogos.keys().map(importAllClientLogos);
 
@@ -97,6 +98,8 @@ function Home({ lang }) {
           </div>
         </div>
       </section>
+
+      <FeaturedCarousel lang={lang} />
 
       <div className="services home-anchor-offset" id="services">
         <div className="services-heading">

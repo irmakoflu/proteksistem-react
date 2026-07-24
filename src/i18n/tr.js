@@ -32,6 +32,29 @@ const tr = {
       'Otomotiv sektöründe bir firma için "Mühendislik ve Değişiklik Yönetimi Sistemi" projemiz',
       'Evde sağlık hizmetleri platform geliştirmesi projelerimiz devam etmektedir',
     ],
+    featuredCarouselCta: 'Bilgi Al',
+    featuredProjects: [
+      {
+        kicker: 'DURAN VARLIK YÖNETİMİ',
+        title: 'Duran Varlık Sayım ve Kontrol Kokpiti',
+        desc: 'Firmaların sahip olduğu uzun vadeli, fiziksel varlıkları etkin biçimde izlemesini sağlayan bir yönetim aracı geliştiriyoruz. Sistem; varlık takibi, bakım-onarım yönetimi, envanter ve zimmet takibi ile raporlama gibi işlevleri tek platformda birleştiriyor. Her varlığa atanan eşsiz QR kodları sayesinde, kamera destekli mobil uygulama üzerinden sayım ve arama işlemleri saniyeler içinde yapılabiliyor. Talep ve onay süreçleri Adobe İnteraktif Form entegrasyonu ile e-posta üzerinden yürütülüyor, çok kullanıcılı admin mimarisi ile birden fazla kişi aynı anda sistemi yönetebiliyor.',
+      },
+      {
+        kicker: 'ENFLASYON MUHASEBESİ',
+        title: 'Enflasyon Muhasebesi Kokpiti',
+        desc: 'Yüksek enflasyon dönemlerinde mali tabloların gerçek durumu yansıtabilmesi için VUK, UFRS ve TFRS standartlarına uygun bir enflasyon muhasebesi çözümü geliştiriyoruz. Stok, duran varlık ve defter-i kebir muhasebesiyle tam entegre çalışan sistem; işletmenin varlık yapısını ve öz sermayesini gerçek tutarlarına taşıyor, fiktif kâr ile reel kârı birbirinden ayırt ediyor. Amortismanın düzeltilmesiyle duran varlıkların yenilenmesi için gerekli fon yaratılırken, dönemler ve işletmeler arası karşılaştırmalar da anlamlı hale geliyor.',
+      },
+      {
+        kicker: 'AKTİVİTE TAKİBİ',
+        title: 'İş ve Görev Atama Optimizasyon Sistemi',
+        desc: 'Personellerin iş takibini, niteliğe göre görev atamasını ve uzaktan çalışma sürecinin yönetimini tek bir platformda topluyoruz. Sistem; günlük-saatlik iş planlaması yapılmasına, gerçekleşen eforların girilmesine ve buna göre aylık raporlar ile faturalandırmaların oluşturulmasına imkân tanıyor. Hem müşterilerin hem personellerin veri girişi yapabildiği karşılıklı kontrol mekanizması sayesinde, iş gücü en verimli şekilde kullanılırken faturalanmamış aktiviteler ve boşa geçen zaman da görünür hale geliyor.',
+      },
+      {
+        kicker: 'YAPAY ZEKÂ DESTEKLİ İŞ GÜCÜ',
+        title: 'Yapay Zekâ Destekli Dinamik İş Gücü Yönetimi',
+        desc: 'İş ve görev atama süreçlerini, makine öğrenmesi, öneri sistemleri, takviyeli öğrenme ve grafik tabanlı analiz yöntemlerini bir araya getiren hibrit bir karar motoruyla yönetilebilir hale getiriyoruz. Sistem; personel yetkinlikleri ile görev özellikleri arasındaki ilişkileri öğrenerek iş yükünü ve tamamlama sürelerini tahmin ediyor, optimizasyon algoritmalarıyla en uygun atama kararlarını üretiyor. .NET Core tabanlı backend, React/Angular arayüz, MongoDB-PostgreSQL hibrit veri yapısı ile Kafka ve Spark altyapısı üzerine kurulu mimari, zaman içinde kendini geliştiren, öğrenen bir yapı sunuyor.',
+      },
+    ],
     whatWeOffer: 'NELER SUNUYORUZ',
     ourServices: 'Hizmetlerimiz',
     ourTeam: 'EKİBİMİZ',
