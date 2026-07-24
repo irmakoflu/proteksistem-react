@@ -183,8 +183,7 @@ const en = {
       'To ensure its suitability, accuracy, and effectiveness, our Information Security Policy is reviewed and kept up to date once a year, or in the event of significant changes regarding our company, with the participation of management and unit supervisors.',
     ],
     signature1: 'Protek Yazılım Sistem Danışmanlık Bilgisayar Sanayi ve Ticaret Limited Şirketi',
-    signature2: 'MUSTAFA ERÖZTEKİN',
-    signature3: 'General Manager',
+    signature2: 'General Manager',
   },
 };
 

@@ -186,8 +186,7 @@ const tr = {
       'Bilgi Güvenliği Politikamız yılda bir kez ya da firmamızla ilgili önemli değişikliklerin olması durumunda uygunluğunu, doğruluğunu ve etkinliğini sağlamak için yönetim ve birim sorumlularının katılımıyla gözden geçirilmekte ve güncelliği sağlanmaktadır.',
     ],
     signature1: 'Protek Yazılım Sistem Danışmanlık Bilgisayar Sanayi ve Ticaret Limited Şirketi',
-    signature2: 'MUSTAFA ERÖZTEKİN',
-    signature3: 'Genel Müdür',
+    signature2: 'Genel Müdür',
   },
 };
 

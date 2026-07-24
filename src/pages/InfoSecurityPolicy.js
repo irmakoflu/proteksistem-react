@@ -15,9 +15,8 @@ function InfoSecurityPolicy({ lang }) {
             {p}
           </p>
         ))}
-        <p style={{ marginTop: 32, fontWeight: 600 }}>{t('securityPolicy.signature1')}</p>
+       <p style={{ marginTop: 32, fontWeight: 600 }}>{t('securityPolicy.signature1')}</p>
         <p style={{ marginTop: 24 }}>{t('securityPolicy.signature2')}</p>
-        <p>{t('securityPolicy.signature3')}</p>
       </div>
     </div>
   );

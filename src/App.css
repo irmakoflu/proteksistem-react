@@ -358,7 +358,7 @@ footer {
 .contact-map-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
@@ -771,6 +771,17 @@ footer {
 
 .home-anchor-offset {
   padding-top: 140px;
+}
+@media (max-width: 700px) {
+  #home,
+  #hakkimizda,
+  #featured-urunler {
+    scroll-margin-top: 80px;
+  }
+
+  .home-anchor-offset {
+    padding-top: 80px;
+  }
 }
 
 .contact-page .contact {
