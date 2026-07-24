@@ -529,7 +529,7 @@ footer {
   height: 26px;
 }
 
-@media(max-width:900px){
+@media(max-width:1150px){
   .mobile-menu-btn{
     display: flex;
     align-items: center;
@@ -1069,4 +1069,5 @@ footer {
     line-height: 1.7;
   }
 }
+
 }
