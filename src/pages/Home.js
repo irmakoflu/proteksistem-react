@@ -4,6 +4,8 @@ import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 import ikBg from '../assets/services/ik-bg.jpg';
 import FeaturedCarousel from '../components/FeaturedCarousel';
+import servicesData from '../data/servicesData';
+
 const importAllClientLogos = require.context('../assets/clients', false, /\.(png|jpe?g|svg)$/);
 const clientLogos = importAllClientLogos.keys().map(importAllClientLogos);
 
@@ -25,6 +27,15 @@ function Home({ lang }) {
     }, 2600);
     return () => clearInterval(interval);
   }, [lang]);
+
+  useEffect(() => {
+    Object.values(servicesData).forEach((meta) => {
+      if (meta.image) {
+        const img = new Image();
+        img.src = meta.image;
+      }
+    });
+  }, []);
 
   const goToService = (key) => {
     markAppNav();

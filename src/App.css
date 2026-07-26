@@ -870,12 +870,18 @@ footer {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
   align-items: center;
+  height: 420px; 
 }
 
 .featured-carousel-text {
   text-align: left;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;      /* Firefox: scrollbar'ı gizle */
 }
-
+.featured-carousel-text::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari: scrollbar'ı gizle */
+}
 .featured-carousel-badge {
   display: inline-block;
   background: rgba(225, 36, 25, 0.1);

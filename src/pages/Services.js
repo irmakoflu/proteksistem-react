@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 import BackButton from '../components/BackButton';
+import servicesData from '../data/servicesData'; 
 
 function Services({ lang }) {
   const navigate = useNavigate();
@@ -12,7 +13,14 @@ function Services({ lang }) {
     markAppNav();
     navigate(`/hizmetlerimiz/${key}`);
   };
-
+useEffect(() => {
+    Object.values(servicesData).forEach((meta) => {
+      if (meta.image) {
+        const img = new Image();
+        img.src = meta.image;
+      }
+    });
+  }, []);
 
   return (
     <div className="services-page">
