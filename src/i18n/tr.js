@@ -125,6 +125,17 @@ const tr = {
         'Çalışanlarımızın maddi ve manevi haklarının korunmasını gözetmek',
       ],
     },
+    yapayzeka: {
+      title: 'Yapay Zeka Proje Geliştirme',
+      cardDesc: 'Makine öğrenmesi ve yapay zeka tabanlı çözümlerle iş süreçlerinizi otomatikleştirin.',
+      body: 'İş süreçlerinizi verimli hale getirmek için makine öğrenmesi, doğal dil işleme ve öneri sistemleri gibi yapay zeka teknolojilerini kullanan uçtan uca projeler geliştiriyoruz. İhtiyaçlarınıza özel modeller tasarlıyor, mevcut sistemlerinize entegre ediyoruz.',
+      features: [
+        'Süreç otomasyonu ve akıllı karar destek sistemleri',
+        'Makine öğrenmesi tabanlı tahmin ve optimizasyon modelleri',
+        'Doğal dil işleme ve akıllı doküman/analiz çözümleri',
+        'Mevcut SAP ve iş sistemlerinize entegre yapay zeka modülleri',
+      ],
+    },
   },
   contactCard: {
     title: 'Bize Ulaşın',

@@ -126,6 +126,17 @@ const en = {
         'Ensuring the protection of our employees’ material and moral rights',
       ],
     },
+    yapayzeka: {
+      title: 'AI Project Development',
+      cardDesc: 'Automate your business processes with machine learning and AI-based solutions.',
+      body: 'We develop end-to-end projects using AI technologies such as machine learning, natural language processing and recommendation systems to make your business processes more efficient. We design custom models tailored to your needs and integrate them into your existing systems.',
+      features: [
+        'Process automation and intelligent decision support systems',
+        'Machine learning-based prediction and optimization models',
+        'Natural language processing and smart document/analysis solutions',
+        'AI modules integrated into your existing SAP and business systems',
+      ],
+    },
   },
   contactCard: {
     title: 'Get in Touch',

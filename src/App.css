@@ -188,7 +188,7 @@ footer {
 }
   .grid{
     max-width:1180px;margin:0 auto;display:grid;
-    grid-template-columns:repeat(4,1fr);gap:22px;
+    grid-template-columns:repeat(5,1fr);gap:18px;
   }
  .card{
   background:#fff;
@@ -201,8 +201,14 @@ footer {
   cursor:pointer;
 }
 
-@media (max-width: 980px){
+@media (max-width: 1150px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+}
+@media (max-width: 700px){
   .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 480px){
+  .grid{grid-template-columns:1fr;}
 }
 .card:hover{
   transform:translateY(-6px);
@@ -224,6 +230,7 @@ footer {
 .card.c-ui5 .icon{background:#4A3E86;}
 .card.c-ik .icon{background:#96472F;}
 .card.c-contact .icon{background:#1F6699;}
+.card.c-yapayzeka .icon{background:#2E5C8A;}
 
 .card h3{font-size:18px;color:var(--ink);margin-bottom:10px;font-weight:600;}
 .card p{font-size:14.5px;color:var(--text-light);line-height:1.6;}
@@ -231,6 +238,7 @@ footer {
   display:inline-block;margin-top:16px;font-size:13.5px;font-weight:600;
   color:var(--brass);border-bottom:1px solid var(--brass);padding-bottom:2px;
 }
+
   section.block{padding:80px 24px;}
   .block .wrap{max-width:1180px;}
   .about{background:var(--paper);}
@@ -569,7 +577,6 @@ footer {
     padding: 12px 0;
   }
   .about-grid,.contact-grid{grid-template-columns:1fr;}
-  .grid{grid-template-columns:1fr;}
   .hero h1{font-size:32px;}
   .services{margin-top:-40px;}
 

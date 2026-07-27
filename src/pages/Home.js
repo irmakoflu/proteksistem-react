@@ -41,6 +41,7 @@ function Home({ lang }) {
     markAppNav();
     navigate(`/hizmetlerimiz/${key}`);
   };
+
   const goToContact = () => {
     markAppNav();
     navigate('/iletisim');
@@ -150,6 +151,21 @@ function Home({ lang }) {
             <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
             <h3>{t('services.ui5.title')}</h3>
             <p>{t('services.ui5.cardDesc')}</p>
+            <span className="more">{t('common.learnMore')}</span>
+          </div>
+
+          <div className="card c-yapayzeka" onClick={() => goToService('yapayzeka')}>
+            <div className="icon">
+              <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7">
+                <rect x="7" y="7" width="10" height="10" rx="2" />
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8" />
+                <circle cx="9.7" cy="9.7" r="0.9" fill="currentColor" stroke="none" />
+                <circle cx="14.3" cy="9.7" r="0.9" fill="currentColor" stroke="none" />
+                <path d="M9.3 14c1.2 1 4.2 1 5.4 0" />
+              </svg>
+            </div>
+            <h3>{t('services.yapayzeka.title')}</h3>
+            <p>{t('services.yapayzeka.cardDesc')}</p>
             <span className="more">{t('common.learnMore')}</span>
           </div>
 

@@ -37,6 +37,7 @@ function ServiceDetail({ lang }) {
         style={{
           backgroundImage: meta.image ? `url(${meta.image})` : 'none',
           backgroundColor: meta.image ? '#0F1E33' : meta.color,
+          backgroundPosition: meta.imagePosition || 'center 55%',
         }}
       >
         {meta.image && <div className="service-detail-hero-overlay"></div>}

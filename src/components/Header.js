@@ -166,6 +166,7 @@ function Header({ lang, setLang }) {
                   <Link to="/hizmetlerimiz/crm" onClick={() => handleNavClick()}>{t('services.crm.title')}</Link>
                   <Link to="/hizmetlerimiz/edefter" onClick={() => handleNavClick()}>{t('services.edefter.title')}</Link>
                   <Link to="/hizmetlerimiz/ui5" onClick={() => handleNavClick()}>{t('services.ui5.title')}</Link>
+                    <Link to="/hizmetlerimiz/yapayzeka" onClick={() => handleNavClick()}>{t('services.yapayzeka.title')}</Link>
                 </div>
               </li>
               <li>
