@@ -143,9 +143,11 @@ const en = {
     desc: 'Reach out to our team directly for your projects or a demo of our applications.',
   },
   serviceDetail: {
+    eyebrow: 'SERVICES',
     whyProtek: 'Why Protek?',
     ourSolutions: 'Our Solutions:',
     requestInfo: 'Request Information',
+    emailSubject: 'Information Request',
     allServices: '← All Services',
     notFound: 'Service not found',
     backToServices: 'Back to Services',
@@ -156,6 +158,257 @@ const en = {
   footer: {
     brand: 'Protek Software',
     rights: 'All rights reserved.',
+  },
+  footerLinks: {
+    privacy: 'PRIVACY POLICY',
+    kvkk: 'KVKK NOTICE',
+    cookies: 'COOKIE POLICY',
+    terms: 'TERMS OF USE',
+    registry: 'TRADE REGISTRY / MERSİS INFO',
+    sla: 'SERVICE LEVEL COMMITMENTS',
+    quality: 'QUALITY POLICY',
+    security: 'INFORMATION SECURITY POLICY',
+  },
+  policies: {
+    privacy: {
+      title: 'Privacy Policy',
+      updated: 'Last updated: 2026',
+      sections: [
+        {
+          heading: '1. Purpose and Scope',
+          body: ['This Privacy Policy explains how Protek Software Systems Consulting Computer Industry and Trade Limited Company ("Protek", "we") collects, uses and protects personal data of visitors to proteksistem.com.'],
+        },
+        {
+          heading: '2. Data We Collect',
+          body: ['When you visit our site or use our contact forms, the following data may be processed:'],
+          list: [
+            'Contact details you provide, such as name, email address, and phone number',
+            'Technical data related to site usage (IP address, browser information, visit duration)',
+            'Browsing data collected via cookies',
+          ],
+        },
+        {
+          heading: '3. Purposes of Use',
+          body: ['Collected data is used to respond to your requests, provide information about our services, improve the website, and fulfill our legal obligations.'],
+        },
+        {
+          heading: '4. Data Sharing',
+          body: ['Your personal data is not shared with third parties except where legally required, and may only be shared with our service providers (e.g. hosting/email providers) in a limited and purpose-bound manner.'],
+        },
+        {
+          heading: '5. Data Security',
+          body: ['We take reasonable technical and administrative measures to protect the security of your personal data.'],
+        },
+        {
+          heading: '6. Contact',
+          body: ['For questions about this policy, you can reach us through the channels listed on our contact page.'],
+        },
+      ],
+    },
+    kvkk: {
+      title: 'Notice under Turkish Data Protection Law (KVKK No. 6698)',
+      updated: 'Last updated: 2026',
+      sections: [
+        {
+          heading: '1. Data Controller',
+          body: ['Under Turkish Law No. 6698 on the Protection of Personal Data ("KVKK"), your personal data is processed by Protek Software Systems Consulting Computer Industry and Trade Limited Company as data controller.'],
+        },
+        {
+          heading: '2. Personal Data Processed and Collection Method',
+          body: ['Data such as your name, email, phone number and message content is collected directly from you electronically when you use our contact forms or request a quote.'],
+        },
+        {
+          heading: '3. Purposes of Processing',
+          list: [
+            'Responding to your requests and messages',
+            'Providing information about our services',
+            'Managing customer relationship processes',
+            'Fulfilling legal obligations',
+          ],
+        },
+        {
+          heading: '4. Transfer of Personal Data',
+          body: ['Your personal data is not shared with third parties except for legal obligations and service providers we work with (hosting/email providers).'],
+        },
+        {
+          heading: '5. Your Rights (KVKK Art. 11)',
+          body: ['Under Article 11 of KVKK, you have the right to learn whether your data is processed, request information about it, learn its purpose, know third parties it is transferred to, request correction or deletion, and object to processing.'],
+        },
+        {
+          heading: '6. How to Apply',
+          body: ['You can exercise these rights by submitting a written request through the address or email on our contact page.'],
+        },
+      ],
+    },
+    cookies: {
+      title: 'Cookie Policy',
+      updated: 'Last updated: July 31, 2026',
+      sections: [
+        {
+          heading: '1. Introduction',
+          body: [
+            'This Cookie Policy forms part of our Privacy Policy.',
+            'We use cookies on proteksistem.com ("Protek", "we") to provide core site functionality, personalize content and experience, analyze site traffic, and understand how you use our site. We have prepared this policy to inform you about the cookies used on our site and the choices available to you regarding them.',
+            'During your time on our site, cookies and similar technologies may be placed on your browser. By selecting "Accept All," you consent to the use of cookies.',
+          ],
+        },
+        {
+          heading: '2. What Is a Cookie?',
+          body: [
+            'Cookies are simple text files placed on your browser by the websites you visit; they do not contain identity information or other personal data. While cookies do not contain such personal information, session data and similar information may be stored anonymously to recognize you and provide similar functions.',
+          ],
+        },
+        {
+          heading: '3. What Types of Cookies Do We Use?',
+          list: [
+            'Session Cookies: Stored temporarily while you browse the site and deleted when you close your browser.',
+            'Persistent Cookies: Remain on your device for a set date or period, and are deleted automatically at the end of that period or when you delete them yourself.',
+            'Necessary Cookies: Used for functions that ensure the site works correctly, such as language preference, form submission, and navigation. Consent is not required for these; you may still block them via your browser settings, though some parts of the site may not function properly as a result.',
+            'Third-Party Cookies: In addition to our own cookies, these are placed by our partners to analyze your visits to our site and other sites and to provide you with a better experience.',
+          ],
+        },
+        {
+          heading: '4. What Third-Party Cookies Are Used on Our Site?',
+          body: [
+            'Google Analytics: Helps us analyze site traffic to better understand user experience. For more information and opt-out options, you can review Google\'s privacy and cookie policies.',
+            'We are not responsible for the reliability of content you may access through the third-party links mentioned above.',
+          ],
+        },
+        {
+          heading: '5. What Purposes Do Cookies Serve on Our Site?',
+          body: ['Cookies on our site are generally used to provide you with a better experience and to help us improve our services. Cookies help achieve the following:'],
+          list: [
+            'Ensuring the core functions of the site (language selection, form submission, navigation) work properly',
+            'Analyzing site traffic and usage statistics',
+            'Understanding how you use our site to improve the user experience',
+          ],
+        },
+        {
+          heading: '6. How Can You Manage or Delete Cookies?',
+          body: [
+            'If your browser allows it, you can manage cookies through your browser settings. This lets you reject all cookies, be warned before a cookie is stored, accept cookies only from sites you specify, or delete cookies you have previously accepted.',
+            'For third-party cookies used on our site, you may be able to opt out directly through the relevant third party\'s website, if such an option is offered.',
+            'If you reject cookies, some features and functions of our site may not be available to you.',
+            'If you access our site from different browsers and/or devices, please note that you will need to check the cookie settings of each separately.',
+          ],
+        },
+        {
+          heading: '7. Changes to This Policy',
+          body: ['Any changes to our Cookie Policy will be published on this page. We recommend reviewing this policy periodically.'],
+        },
+      ],
+    },
+    terms: {
+      title: 'Terms of Use',
+      updated: 'Last updated: 2026',
+      sections: [
+        {
+          heading: '1. General Provisions',
+          body: ['By using proteksistem.com, you agree to these Terms of Use, which govern site usage and limit our liability.'],
+        },
+        {
+          heading: '2. Intellectual Property',
+          body: ['All content on this site (text, logo, images, design, etc.) belongs to or is licensed by Protek Software and may not be copied, reproduced, or distributed without permission.'],
+        },
+        {
+          heading: '3. Disclaimer',
+          body: ['Site content is provided for informational purposes. Protek Software makes no warranty as to the accuracy, completeness, or timeliness of the information and is not liable for damages arising from its use.'],
+        },
+        {
+          heading: '4. Restrictions on Use',
+          body: ['Users may not use the site in a way that violates the law, infringes third-party rights, or damages the operation of the site.'],
+        },
+        {
+          heading: '5. Changes',
+          body: ['Protek Software reserves the right to update these Terms of Use without prior notice.'],
+        },
+      ],
+    },
+    registry: {
+      title: 'Trade Registry / MERSİS Information',
+      updated: 'Last updated: 2026',
+      sections: [
+        {
+          heading: '1. Company Information',
+          list: [
+            'Trade Name: Protek Software Systems Consulting Computer Industry and Trade Limited Company',
+            'MERSİS Number: [Add your MERSİS number here]',
+            'Trade Registry Number: [Add your trade registry number here]',
+            'Trade Registry Office: [Your registered registry office]',
+            'Headquarters: Barış District, Koşu Yolu Street, TÜBİTAK Gebze Campus, Marmara Technopark No: 32/17 Unit: Z01, Gebze / Kocaeli, Türkiye',
+          ],
+        },
+        {
+          heading: '2. Contact',
+          body: ['For questions about company registration details, you can reach us through the channels on our contact page.'],
+        },
+      ],
+    },
+    sla: {
+      title: 'Service Level Commitments',
+      updated: 'Last updated: July 31, 2026',
+      sections: [
+        {
+          heading: '1. Purpose and Scope',
+          body: ['This document informs users about the general service level commitments related to the software products ("Protek e-Ledger", "Corpro", and other enterprise solutions) and support services provided by Protek Software. The scope of these commitments may vary according to the contract and service terms signed with each customer.'],
+        },
+        {
+          heading: '2. Technical Support Process',
+          body: ['The technical support service we provide to our customers is carried out through a process classified by request priority. Support requests can be submitted via email, phone, or the customer portal, and are logged and tracked accordingly.'],
+        },
+        {
+          heading: '3. Availability (Uptime) Commitment',
+          body: ['For our cloud-based solutions, our targeted system availability rate is 99.5% or higher. Planned maintenance is announced in advance and, where possible, carried out outside of peak usage hours.'],
+        },
+        {
+          heading: '4. Response and Resolution Times',
+          list: [
+            'First response time for critical priority issues: 2 business hours',
+            'First response time for high priority requests: 4 business hours',
+            'First response time for normal priority requests: 1 business day',
+            'Resolution times may vary depending on the scope and complexity of the issue',
+          ],
+        },
+        {
+          heading: '5. Exclusions',
+          body: ['Force majeure events, outages caused by third-party infrastructure providers, and configuration errors caused by the customer are outside the scope of these commitments.'],
+        },
+        {
+          heading: '6. Contact',
+          body: ['For more information about our service level commitments, you can reach us through the channels on our contact page.'],
+        },
+      ],
+    },
+    quality: {
+      title: 'Quality Policy',
+      updated: 'Last updated: July 31, 2026',
+      sections: [
+        {
+          heading: '1. Purpose',
+          body: ['As Protek Software Systems Consulting Computer Industry and Trade Limited Company, we are committed to providing and sustaining the highest quality standards in the consulting and software services we offer.'],
+        },
+        {
+          heading: '2. Our Approach to Quality',
+          body: ['Our quality management system is built on accurately understanding customer expectations, delivering our projects on time and in full, and ensuring a consistent level of quality in every solution we provide.'],
+        },
+        {
+          heading: '3. Continuous Improvement',
+          body: ['We regularly review our processes and continuously improve our services based on the feedback and performance data we gather. This approach is reflected both in our internal processes and in the solutions we deliver to our customers.'],
+        },
+        {
+          heading: '4. Customer Satisfaction',
+          body: ['Customer satisfaction lies at the core of our quality policy. At every stage of our projects, we take customer feedback into account and aim to deliver solutions that meet or exceed expectations.'],
+        },
+        {
+          heading: '5. Employee Engagement',
+          body: ['We value the conscious engagement of all our employees in achieving our quality objectives, and we provide our team with regular training and development opportunities.'],
+        },
+        {
+          heading: '6. Review',
+          body: ['Our quality policy is reviewed and updated annually, or in the event of significant changes, with management participation, to ensure its suitability, accuracy, and effectiveness.'],
+        },
+      ],
+    },
   },
  
   contact: {
@@ -177,11 +430,36 @@ const en = {
     successMsg: 'Your message has been sent, thank you!',
     errorMsg: 'Something went wrong, please try again.',
     mapTitle: 'Protek Software Location Map',
+    kvkkLinkLabel: 'Personal Data Protection Notice',
+    kvkkConsentText: 'and I consent to it.',
+  },
+  cookieConsent: {
+    title: 'Customize Your Preferences',
+    text: 'We use cookies on our website to personalize your experience. If you consent, data collected via cookies other than strictly necessary ones is processed. You can manage your cookie preferences from the cookie settings, and find more details on the',
+    policyLinkLabel: 'Cookie Policy',
+    policyLinkSuffix: 'page.',
+    settingsLink: 'Cookie Settings',
+    reject: 'Reject',
+    accept: 'Accept',
+    modalTitle: 'Cookie Settings',
+    modalIntro: 'When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information does not usually identify you directly but can give you a more personalized web experience. You can choose not to allow certain types of cookies.',
+    acceptAll: 'Accept All',
+    necessary: 'Necessary Cookies',
+    necessaryDesc: 'These cookies are required for the site to function properly and cannot be turned off.',
+    functionalDesc: 'Used to remember personalized settings such as your language preference.',
+    targetingDesc: 'Tracks your interests in order to show you more relevant ads.',
+    performanceDesc: 'Allows us to analyze site traffic and usage statistics to improve the site.',
+    necessaryAlwaysOn: 'Always Active',
+    functional: 'Functional Cookies',
+    targeting: 'Targeting and Personalized Advertising Cookies',
+    performance: 'Performance and Analytics Cookies',
+    saveSettings: 'Save Cookie Settings',
   },
     validation: {
     name: 'Please enter your full name.',
     email: 'Please enter a valid email address.',
     message: 'Please write a message.',
+    kvkk: 'You must accept the Personal Data Protection Notice to submit this form.',
   },
  securityPolicy: {
     title: 'Information Security Policy',

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackButton from '../components/BackButton';
+import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 
 // Basit sanitizasyon: HTML/script enjeksiyonuna zemin hazırlayan karakterleri
@@ -16,8 +18,9 @@ const sanitizeInput = (value) => {
 function Contact({ lang }) {
   const { t } = useTranslation(lang);
 
-
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [kvkkConsent, setKvkkConsent] = useState(false);
+  const [kvkkError, setKvkkError] = useState(false);
   const [status, setStatus] = useState('idle');
 
   const handleInvalid = (e) => {
@@ -31,6 +34,11 @@ function Contact({ lang }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleKvkkChange = (e) => {
+    setKvkkConsent(e.target.checked);
+    if (e.target.checked) setKvkkError(false);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,6 +46,12 @@ function Contact({ lang }) {
     // görmediği bu alanı boş bırakır. Doluysa sessizce reddet.
     const honeypot = e.target.elements['company_website']?.value;
     if (honeypot) {
+      return;
+    }
+
+    // KVKK onayı verilmeden form kesinlikle gönderilmez.
+    if (!kvkkConsent) {
+      setKvkkError(true);
       return;
     }
 
@@ -59,6 +73,7 @@ function Contact({ lang }) {
       payload.append('name', cleanName);
       payload.append('email', cleanEmail);
       payload.append('message', cleanMessage);
+      payload.append('kvkk_consent', 'evet');
 
       const res = await fetch('https://formspree.io/f/mzdnvnqz', {
         method: 'POST',
@@ -68,6 +83,7 @@ function Contact({ lang }) {
       if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        setKvkkConsent(false);
       } else {
         setStatus('error');
       }
@@ -93,8 +109,9 @@ function Contact({ lang }) {
                 </svg>
                 {t('contact.address')}
               </span>
-
-              <a
+              
+              {/* Eksik <a etiketi buraya eklendi */}
+              <a 
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -137,7 +154,9 @@ function Contact({ lang }) {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              <a
+              
+              {/* Eksik <a etiketi buraya eklendi */}
+              <a 
                 href="https://www.google.com/maps/search/?api=1&query=TÜBİTAK+Gebze+Yerleşkesi+Marmara+Teknokent+No:32/17+Gebze+Kocaeli"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -196,6 +215,26 @@ function Contact({ lang }) {
                   maxLength={1000}
                   required
                 ></textarea>
+
+                <label className={`kvkk-consent-row${kvkkError ? ' kvkk-consent-error' : ''}`}>
+                  <input
+                    type="checkbox"
+                    checked={kvkkConsent}
+                    onChange={handleKvkkChange}
+                  />
+                  <span>
+                   <Link
+  to="/politikalar/kvkk-aydinlatma-metni"
+  onClick={() => markAppNav()}
+>
+  {t('contact.kvkkLinkLabel')}
+</Link>{' '}
+                    {t('contact.kvkkConsentText')}
+                  </span>
+                </label>
+                {kvkkError && (
+                  <p className="contact-form-status error">{t('validation.kvkk')}</p>
+                )}
 
                 <button type="submit" className="btn contact-form-btn" disabled={status === 'sending'}>
                   {status === 'sending' ? t('contact.sending') : t('contact.send')}

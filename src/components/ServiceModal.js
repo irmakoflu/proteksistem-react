@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from '../i18n';
 
 function ServiceModal({ activeService, activeKey, lang, onClose }) {
+  const { t } = useTranslation(lang);
+
   if (!activeService) return null;
   const s = activeService;
   const targetEmail = s.email || 'bilgi@proteksistem.com';
@@ -13,17 +16,20 @@ function ServiceModal({ activeService, activeKey, lang, onClose }) {
       <div className="modal-box" style={{ background: s.color }}>
         <button className="modal-close" onClick={onClose}>✕</button>
         <div className="modal-icon" dangerouslySetInnerHTML={{ __html: s.icon }}></div>
-        <div className="modal-eyebrow">{lang === 'tr' ? 'HİZMETLERİMİZ' : 'SERVICES'}</div>
+        <div className="modal-eyebrow">{t('serviceDetail.eyebrow')}</div>
         <h2>{s.title}</h2>
         <p style={{ fontSize: '1.1em', marginBottom: 20 }}>{s.body}</p>
         <h4 style={{ marginBottom: 10 }}>
-          {activeKey === 'ik'
-            ? (lang === 'tr' ? 'Neden Protek?' : 'Why Protek?')
-            : (lang === 'tr' ? 'Sunduğumuz Çözümler:' : 'Our Solutions:')}
+          {activeKey === 'ik' ? t('serviceDetail.whyProtek') : t('serviceDetail.ourSolutions')}
         </h4>
         <ul>{s.features.map((f, i) => <li key={i}>→ {f}</li>)}</ul>
-        <a href={`mailto:${targetEmail}?subject=Bilgi Talebi: ${s.title}`} className="modal-btn">
-          {lang === 'tr' ? 'Bilgi Talep Et' : 'Request Information'}
+        
+        {/* Eksik <a etiketi buraya eklendi */}
+        <a
+          href={`mailto:${targetEmail}?subject=${t('serviceDetail.emailSubject')}: ${s.title}`}
+          className="modal-btn"
+        >
+          {t('serviceDetail.requestInfo')}
         </a>
       </div>
     </div>
