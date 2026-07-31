@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useCookieConsent } from '../hooks/useCookieConsent';
 
 // Google Analytics 4 ölçüm kimliğini buraya gir (Google Analytics hesabından alınır)
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+const GA_MEASUREMENT_ID = 'G-BLB09JC2S5';
 
 function Analytics() {
   const canTrack = useCookieConsent('performance');
