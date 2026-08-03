@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Marketing from './components/Marketing';
 import Analytics from './components/Analytics';
+import ProductDetail from './pages/ProductDetail';
 import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 import PolicyPage from './pages/PolicyPage';
@@ -50,6 +51,7 @@ function App() {
             <Route path="/" element={<Home lang={lang} />} />
             <Route path="/hizmetlerimiz" element={<RequireAppNav><Services lang={lang} /></RequireAppNav>} />
             <Route path="/hizmetlerimiz/:serviceKey" element={<RequireAppNav><ServiceDetail lang={lang} /></RequireAppNav>} />
+            <Route path="/urunler/:productKey" element={<RequireAppNav><ProductDetail lang={lang} /></RequireAppNav>} />
             <Route path="/iletisim" element={<RequireAppNav><Contact lang={lang} /></RequireAppNav>} />
             <Route path="/bilgi-guvenligi-politikasi" element={<RequireAppNav><InfoSecurityPolicy lang={lang} /></RequireAppNav>} />
             <Route path="*" element={<NotFound lang={lang} />} />

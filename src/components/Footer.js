@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
 
 function Footer({ lang }) {
   const { t } = useTranslation(lang);
+  const location = useLocation();
 
- const links = [
+  const links = [
     { to: '/politikalar/gizlilik-politikasi', label: t('footerLinks.privacy') },
     { to: '/politikalar/kvkk-aydinlatma-metni', label: t('footerLinks.kvkk') },
     { to: '/politikalar/cerez-politikasi', label: t('footerLinks.cookies') },
@@ -16,6 +17,7 @@ function Footer({ lang }) {
     { to: '/politikalar/kalite-politikasi', label: t('footerLinks.quality') },
     { to: '/bilgi-guvenligi-politikasi', label: t('footerLinks.security') },
   ];
+
   return (
     <footer>
       <div className="footer-inner">
@@ -31,7 +33,7 @@ function Footer({ lang }) {
               key={link.to}
               to={link.to}
               onClick={() => markAppNav()}
-              className="footer-link"
+              className={`footer-link${location.pathname === link.to ? ' footer-link-active' : ''}`}
             >
               {link.label}
             </Link>
