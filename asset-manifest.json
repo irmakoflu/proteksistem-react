@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/proteksistem-react/static/css/main.093a9b9a.css",
-    "main.js": "/proteksistem-react/static/js/main.ba401259.js",
+    "main.css": "/proteksistem-react/static/css/main.32c4cc1b.css",
+    "main.js": "/proteksistem-react/static/js/main.54fb47da.js",
     "static/js/453.9a9e01d6.chunk.js": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js",
     "static/media/ik-bg.jpg": "/proteksistem-react/static/media/ik-bg.b4e919176ba508f29ae5.jpg",
     "static/media/yapayzeka.jpg": "/proteksistem-react/static/media/yapayzeka.0dc354ee1330021cb5d9.jpg",
@@ -10,6 +10,11 @@
     "static/media/erp.jpg": "/proteksistem-react/static/media/erp.2796696ad773cd64171d.jpg",
     "static/media/webnak.png": "/proteksistem-react/static/media/webnak.18f9e0d515552f120d50.png",
     "static/media/sap.jpg": "/proteksistem-react/static/media/sap.1996cdad710d37125e78.jpg",
+    "static/media/ats-efforts.png": "/proteksistem-react/static/media/ats-efforts.f7b346b269e1308b03dc.png",
+    "static/media/ats-calendar.png": "/proteksistem-react/static/media/ats-calendar.6227fcd675f177cc938d.png",
+    "static/media/ats-login.png": "/proteksistem-react/static/media/ats-login.6e1ed44c4a766047ab09.png",
+    "static/media/ats-tasks.png": "/proteksistem-react/static/media/ats-tasks.80bc1944646d2e530890.png",
+    "static/media/ats-projects.png": "/proteksistem-react/static/media/ats-projects.c3b857b7bb8c9a1a8b33.png",
     "static/media/roche.png": "/proteksistem-react/static/media/roche.e60e85cdc929436965fb.png",
     "static/media/ditas.png": "/proteksistem-react/static/media/ditas.4f637b806c27e4dd0196.png",
     "static/media/garenta.png": "/proteksistem-react/static/media/garenta.4051133068156786eecd.png",
@@ -41,12 +46,12 @@
     "static/media/hunca.png": "/proteksistem-react/static/media/hunca.4894c54b8f29674e325e.png",
     "static/media/hidromek.png": "/proteksistem-react/static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "/proteksistem-react/index.html",
-    "main.093a9b9a.css.map": "/proteksistem-react/static/css/main.093a9b9a.css.map",
-    "main.ba401259.js.map": "/proteksistem-react/static/js/main.ba401259.js.map",
+    "main.32c4cc1b.css.map": "/proteksistem-react/static/css/main.32c4cc1b.css.map",
+    "main.54fb47da.js.map": "/proteksistem-react/static/js/main.54fb47da.js.map",
     "453.9a9e01d6.chunk.js.map": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.093a9b9a.css",
-    "static/js/main.ba401259.js"
+    "static/css/main.32c4cc1b.css",
+    "static/js/main.54fb47da.js"
   ]
 }
