@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/proteksistem-react/static/css/main.982c7a33.css",
-    "main.js": "/proteksistem-react/static/js/main.1f0ca2ec.js",
+    "main.css": "/proteksistem-react/static/css/main.163e8662.css",
+    "main.js": "/proteksistem-react/static/js/main.443e0cea.js",
     "static/js/453.9a9e01d6.chunk.js": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js",
-    "static/media/insankaynaklari.png": "/proteksistem-react/static/media/insankaynaklari.2799d0d4f08e64a7dccf.png",
     "static/media/yapayzeka.jpg": "/proteksistem-react/static/media/yapayzeka.0dc354ee1330021cb5d9.jpg",
     "static/media/e-defter.jpg": "/proteksistem-react/static/media/e-defter.694b28aa65c27d169d7e.jpg",
     "static/media/crm.jpg": "/proteksistem-react/static/media/crm.05d60a4fbba96e498362.jpg",
     "static/media/erp.jpg": "/proteksistem-react/static/media/erp.2796696ad773cd64171d.jpg",
     "static/media/webnak.png": "/proteksistem-react/static/media/webnak.18f9e0d515552f120d50.png",
     "static/media/sap.jpg": "/proteksistem-react/static/media/sap.1996cdad710d37125e78.jpg",
+    "static/media/insankaynaklari.webp": "/proteksistem-react/static/media/insankaynaklari.07c61704b3582b215351.webp",
     "static/media/ats-efforts.png": "/proteksistem-react/static/media/ats-efforts.f7b346b269e1308b03dc.png",
     "static/media/ats-calendar.png": "/proteksistem-react/static/media/ats-calendar.6227fcd675f177cc938d.png",
     "static/media/ats-login.png": "/proteksistem-react/static/media/ats-login.6e1ed44c4a766047ab09.png",
@@ -46,12 +46,12 @@
     "static/media/hunca.png": "/proteksistem-react/static/media/hunca.4894c54b8f29674e325e.png",
     "static/media/hidromek.png": "/proteksistem-react/static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "/proteksistem-react/index.html",
-    "main.982c7a33.css.map": "/proteksistem-react/static/css/main.982c7a33.css.map",
-    "main.1f0ca2ec.js.map": "/proteksistem-react/static/js/main.1f0ca2ec.js.map",
+    "main.163e8662.css.map": "/proteksistem-react/static/css/main.163e8662.css.map",
+    "main.443e0cea.js.map": "/proteksistem-react/static/js/main.443e0cea.js.map",
     "453.9a9e01d6.chunk.js.map": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.982c7a33.css",
-    "static/js/main.1f0ca2ec.js"
+    "static/css/main.163e8662.css",
+    "static/js/main.443e0cea.js"
   ]
 }
