@@ -250,7 +250,7 @@ footer{
 .services-heading{
   text-align:center;
   max-width:600px;
-  margin:0 auto 50px;
+  margin:0 auto 25px;
 }
 .services-kicker{
   display:block;
@@ -732,6 +732,9 @@ footer{
   }
   .about-grid,.contact-grid{grid-template-columns:1fr;}
   .hero h1{font-size:32px;}
+  .hero{
+    padding: 60px 24px 70px;
+  }
   .services{margin-top:-40px;}
 
   /* --- Mobil dropdown düzeltmesi (YENİ) --- */
@@ -947,7 +950,7 @@ footer{
   }
 
   .home-anchor-offset {
-    padding-top: 80px;
+    padding-top: 50px;
   }
 }
 
@@ -1019,7 +1022,6 @@ footer{
     margin-bottom: 16px;
     border-radius: 12px;
     margin-top:-35px;
-    overflow: hidden;
   }
   .hr-photo{
     height: 200px;
