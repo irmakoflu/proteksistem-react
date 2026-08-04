@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/proteksistem-react/static/css/main.8409f629.css",
+    "main.css": "/proteksistem-react/static/css/main.49bb0fb4.css",
     "main.js": "/proteksistem-react/static/js/main.443e0cea.js",
     "static/js/453.9a9e01d6.chunk.js": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js",
     "static/media/yapayzeka.jpg": "/proteksistem-react/static/media/yapayzeka.0dc354ee1330021cb5d9.jpg",
@@ -46,12 +46,12 @@
     "static/media/hunca.png": "/proteksistem-react/static/media/hunca.4894c54b8f29674e325e.png",
     "static/media/hidromek.png": "/proteksistem-react/static/media/hidromek.f6c86211df91041d857a.png",
     "index.html": "/proteksistem-react/index.html",
-    "main.8409f629.css.map": "/proteksistem-react/static/css/main.8409f629.css.map",
+    "main.49bb0fb4.css.map": "/proteksistem-react/static/css/main.49bb0fb4.css.map",
     "main.443e0cea.js.map": "/proteksistem-react/static/js/main.443e0cea.js.map",
     "453.9a9e01d6.chunk.js.map": "/proteksistem-react/static/js/453.9a9e01d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8409f629.css",
+    "static/css/main.49bb0fb4.css",
     "static/js/main.443e0cea.js"
   ]
 }
