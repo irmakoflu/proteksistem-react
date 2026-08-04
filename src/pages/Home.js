@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { markAppNav } from '../utils/navHelpers';
 import { useTranslation } from '../i18n';
-import ikBg from '../assets/services/ik-bg.jpg';
+import ikBg from '../assets/services/insankaynaklari.webp';
+import { Settings, Handshake, Scale } from 'lucide-react';
 import FeaturedCarousel from '../components/FeaturedCarousel';
 import servicesData from '../data/servicesData';
+import { Database, Network, FileText, MonitorSmartphone, BrainCircuit } from 'lucide-react';
 
 const importAllClientLogos = require.context('../assets/clients', false, /\.(png|jpe?g|svg)$/);
 const clientLogos = importAllClientLogos.keys().map(importAllClientLogos);
+const hrIcons = [Settings, Handshake, Scale];
 
 function Home({ lang }) {
   const navigate = useNavigate();
@@ -117,38 +120,46 @@ function Home({ lang }) {
 
       <FeaturedCarousel lang={lang} />
 
-      <div className="services home-anchor-offset" id="services">
+     <div className="services home-anchor-offset" id="services">
         <div className="services-heading">
           <span className="services-kicker">
             {t('home.whatWeOffer')}
           </span>
           <h2>{t('home.ourServices')}</h2>
         </div>
-        <div className="grid">
+        <div className="services-grid-3col">
 
           <div className="card c-erp" onClick={() => goToService('erp')}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M4 11h16"/></svg></div>
+            <div className="icon">
+              <Database strokeWidth={1.6} />
+            </div>
             <h3>{t('services.erp.title')}</h3>
             <p>{t('services.erp.cardDesc')}</p>
             <span className="more">{t('common.learnMore')}</span>
           </div>
 
           <div className="card c-crm" onClick={() => goToService('crm')}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m5-2.63a4 4 0 100-8 4 4 0 000 8zm7-2a4 4 0 10-2-7.47"/></svg></div>
+            <div className="icon">
+              <Network strokeWidth={1.6} />
+            </div>
             <h3>{t('services.crm.title')}</h3>
             <p>{t('services.crm.cardDesc')}</p>
             <span className="more">{t('common.learnMore')}</span>
           </div>
 
           <div className="card c-edefter" onClick={() => goToService('edefter')}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg></div>
+            <div className="icon">
+              <FileText strokeWidth={1.6} />
+            </div>
             <h3>{t('services.edefter.title')}</h3>
             <p>{t('services.edefter.cardDesc')}</p>
             <span className="more">{t('common.learnMore')}</span>
           </div>
 
           <div className="card c-ui5" onClick={() => goToService('ui5')}>
-            <div className="icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+            <div className="icon">
+              <MonitorSmartphone strokeWidth={1.6} />
+            </div>
             <h3>{t('services.ui5.title')}</h3>
             <p>{t('services.ui5.cardDesc')}</p>
             <span className="more">{t('common.learnMore')}</span>
@@ -156,13 +167,7 @@ function Home({ lang }) {
 
           <div className="card c-yapayzeka" onClick={() => goToService('yapayzeka')}>
             <div className="icon">
-              <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7">
-                <rect x="7" y="7" width="10" height="10" rx="2" />
-                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8" />
-                <circle cx="9.7" cy="9.7" r="0.9" fill="currentColor" stroke="none" />
-                <circle cx="14.3" cy="9.7" r="0.9" fill="currentColor" stroke="none" />
-                <path d="M9.3 14c1.2 1 4.2 1 5.4 0" />
-              </svg>
+              <BrainCircuit strokeWidth={1.6} />
             </div>
             <h3>{t('services.yapayzeka.title')}</h3>
             <p>{t('services.yapayzeka.cardDesc')}</p>
@@ -172,29 +177,35 @@ function Home({ lang }) {
         </div>
       </div>
 
-      <section
-        className="block hr-section home-anchor-offset"
-        id="insan-kaynaklari"
-        style={{ '--hr-bg-image': `url(${ikBg})` }}
-      >
-        <div className="wrap">
-          <div className="services-heading">
-            <span className="services-kicker">
-              {t('home.ourTeam')}
-            </span>
-            <h2>{t('services.ik.title')}</h2>
-          </div>
 
-          <div className="hr-content">
-            <p className="hr-lead">{t('services.ik.body')}</p>
-            <ul className="service-detail-list hr-list">
-              {(t('services.ik.features') || []).map((f, i) => (
-                <li key={i}>{f}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+
+<section className="block hr-section home-anchor-offset" id="insan-kaynaklari">
+  <div className="wrap">
+    <div className="services-heading">
+      <span className="services-kicker">{t('home.ourTeam')}</span>
+      <h2>{t('services.ik.title')}</h2>
+    </div>
+
+    <div className="hr-photo-wrap">
+      <img src={ikBg} alt={t('services.ik.title')} className="hr-photo" loading="eager" fetchPriority="high"/>
+
+      <div className="hr-cards">
+        {(t('services.ik.pillars') || []).map((p, i) => {
+          const Icon = hrIcons[i] || Settings;
+          return (
+            <div className="hr-card" key={i}>
+              <div className="hr-card-icon">
+                <Icon strokeWidth={1.6} />
+              </div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 }

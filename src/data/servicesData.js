@@ -1,4 +1,4 @@
-import ikBg from '../assets/services/ik-bg.jpg';
+
 import erpBg from '../assets/services/erp.jpg';
 import crmBg from '../assets/services/crm.jpg';
 import edefterBg from '../assets/services/e-defter.jpg';
@@ -17,7 +17,7 @@ const servicesData = {
     icon: '<svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/><circle cx="9.7" cy="9.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.3" cy="9.7" r="0.9" fill="currentColor" stroke="none"/><path d="M9.3 14c1.2 1 4.2 1 5.4 0"/></svg>',
     email: 'bilgi@proteksistem.com',
   },
-  ik:      { color: '#96472F', image: ikBg,      icon: '<svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>', email: 'bilgi@proteksistem.com' },
+  ik:      { color: '#96472F',    icon: '<svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>', email: 'bilgi@proteksistem.com' },
 };
 
 export default servicesData;

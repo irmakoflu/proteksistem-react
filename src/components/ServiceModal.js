@@ -24,7 +24,7 @@ function ServiceModal({ activeService, activeKey, lang, onClose }) {
         </h4>
         <ul>{s.features.map((f, i) => <li key={i}>→ {f}</li>)}</ul>
         
-        {/* Eksik <a etiketi buraya eklendi */}
+    
         <a
           href={`mailto:${targetEmail}?subject=${t('serviceDetail.emailSubject')}: ${s.title}`}
           className="modal-btn"

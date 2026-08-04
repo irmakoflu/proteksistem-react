@@ -45,16 +45,18 @@ const en = {
         link: 'duran-varlik-yonetimi',
       },
       {
+        kicker: 'AI-POWERED WORKFORCE',
+        title: 'AI-Powered Dynamic Workforce Management',
+        desc: 'Optimize task and job assignment with a decision engine powered by artificial intelligence.',
+        link: 'yapayzeka',
+      },
+      {
         kicker: 'INFLATION ACCOUNTING',
         title: 'CORPRO Inflation Accounting Cockpit',
         desc: 'Reflect your financial statements at their real values in inflationary conditions and make decisions on reliable data.',
         link: 'enflasyon-muhasebesi',
       },
-      {
-        kicker: 'AI-POWERED WORKFORCE',
-        title: 'AI-Powered Dynamic Workforce Management',
-        desc: 'Optimize task and job assignment with a decision engine powered by artificial intelligence.',
-      },
+      
     ],
     whatWeOffer: 'WHAT WE OFFER?',
     ourServices: 'Our Services',
@@ -123,6 +125,11 @@ const en = {
         'Following a transparent and open management policy',
         'Ensuring the protection of our employees’ material and moral rights',
       ],
+       pillars: [
+    { title: 'Continuous Development', desc: 'We provide our employees with ongoing training and self-development opportunities.' },
+    { title: 'Transparent Communication', desc: 'We follow an open, transparent management policy and communicate regularly with our team.' },
+    { title: 'Protection of Rights', desc: 'Protecting our employees\' material and moral rights is a core principle for us.' },
+  ],
     },
     yapayzeka: {
       title: 'AI Project Development',
@@ -200,6 +207,36 @@ const en = {
       partnerLinkLabel: 'View the Corsist product page →',
       partnerLinkUrl: 'https://corsist.com/tr/cozumler/finans-ve-muhasebe-uygulamalar/corpro-enflasyon-muhasebesi-kokpiti/',
     },
+   yapayzeka: {
+  eyebrow: 'AI-POWERED PRODUCT',
+  title: 'AI-Powered Dynamic Workforce Management',
+  lead: 'We develop end-to-end solutions that use artificial intelligence to optimize how work is assigned, tracked, and reported across your organization. By combining machine learning-based decision engines with real-time operational data, we help match the right task to the right person at the right time — increasing efficiency while reducing manual planning overhead.',
+  features: [
+    'Process automation and intelligent decision support systems',
+    'Machine learning-based prediction and optimization models',
+    'Natural language processing and smart document/analysis solutions',
+    'AI modules integrated into your existing SAP and business systems',
+  ],
+  subProduct: {
+    kicker: 'OUR IMPLEMENTATION',
+    title: 'ATS — Activity Tracking System',
+    featuresHeading: 'ATS Features:',
+    lead: "ATS is a web and mobile application that puts this AI-powered workforce approach into practice — letting teams and individuals track daily effort logs, tasks, and project progress from a single place. With domain-based, enterprise-grade login security, it gives clear visibility into where your team's time goes.",
+    features: [
+      'Log task-based effort and time in seconds',
+      'Stay organized with real-time task tracking and prioritization',
+      'A live dashboard with easy-to-read performance metrics',
+      'Enterprise-grade, domain-based secure login',
+      'Seamless sync between web and mobile',
+      'Detailed reporting with project, customer, and label-based filtering',
+    ],
+  },
+  partnerNote: 'ATS is our own in-house product, developed by Protek Software.',
+  partnerLinkLabel: 'View on Google Play →',
+  partnerLinkUrl: 'https://play.google.com/store/apps/details?id=com.protek.ats_mobile&hl=tr',
+  appStoreLinkLabel: 'View on the App Store →',
+  appStoreLinkUrl: 'https://apps.apple.com/tr/app/activity-tracking-system/id6670606350?l=tr',
+},
   },
   policies: {
     privacy: {

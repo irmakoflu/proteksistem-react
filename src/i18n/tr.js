@@ -44,17 +44,19 @@ const tr = {
         desc: 'Sabit kıymetlerinizi tek ekrandan yönetin; sayım, zimmet ve raporlama süreçlerinizi kolaylaştırın.',
         link: 'duran-varlik-yonetimi',
       },
+       {
+        kicker: 'YAPAY ZEKÂ DESTEKLİ İŞ GÜCÜ',
+        title: 'Yapay Zekâ Destekli Dinamik İş Gücü Yönetimi',
+        desc: 'Görev ve atama süreçlerini yapay zeka destekli bir karar motoruyla optimize edin.',
+        link: 'yapayzeka',
+      },
       {
         kicker: 'ENFLASYON MUHASEBESİ',
         title: 'CORPRO Enflasyon Muhasebesi Kokpiti',
         desc: 'Enflasyonlu dönemlerde mali tablolarınızı gerçek değerleriyle güncelleyin, güvenilir verilerle doğru kararlar alın.',
         link: 'enflasyon-muhasebesi',
       },
-      {
-        kicker: 'YAPAY ZEKÂ DESTEKLİ İŞ GÜCÜ',
-        title: 'Yapay Zekâ Destekli Dinamik İş Gücü Yönetimi',
-        desc: 'Görev ve atama süreçlerini yapay zeka destekli bir karar motoruyla optimize edin.',
-      },
+     
     ],
     whatWeOffer: 'NELER SUNUYORUZ?',
     ourServices: 'Hizmetlerimiz',
@@ -122,6 +124,11 @@ const tr = {
         'Şeffaf ve açık bir yönetim politikası izlemek',
         'Çalışanlarımızın maddi ve manevi haklarının korunmasını gözetmek',
       ],
+      pillars: [
+    { title: 'Sürekli Gelişim', desc: 'Çalışanlarımıza sürekli eğitim ve kendini geliştirme imkânları sunuyoruz.' },
+    { title: 'Şeffaf İletişim', desc: 'Şeffaf ve açık bir yönetim politikası izliyor, çalışanlarımızla düzenli iletişim kuruyoruz.' },
+    { title: 'Hakların Korunması', desc: 'Çalışanlarımızın maddi ve manevi haklarının korunmasını temel ilke olarak benimsiyoruz.' },
+  ],
     },
     yapayzeka: {
       title: 'Yapay Zeka Proje Geliştirme',
@@ -199,6 +206,36 @@ serviceDetail: {
       partnerLinkLabel: 'Corsist ürün sayfasını görüntüle →',
       partnerLinkUrl: 'https://corsist.com/tr/cozumler/finans-ve-muhasebe-uygulamalar/corpro-enflasyon-muhasebesi-kokpiti/',
     },
+   yapayzeka: {
+  eyebrow: 'YAPAY ZEKÂ DESTEKLİ ÜRÜN',
+  title: 'Yapay Zekâ Destekli Dinamik İş Gücü Yönetimi',
+  lead: 'Görev atama, takip ve raporlama süreçlerini yapay zeka ile optimize eden uçtan uca çözümler geliştiriyoruz. Makine öğrenmesi tabanlı karar motorlarını gerçek zamanlı operasyonel verilerle birleştirerek, doğru görevi doğru zamanda doğru kişiyle eşleştirmenizi sağlıyor; manuel planlama yükünü azaltırken verimliliği artırıyoruz.',
+  features: [
+    'Süreç otomasyonu ve akıllı karar destek sistemleri',
+    'Makine öğrenmesi tabanlı tahmin ve optimizasyon modelleri',
+    'Doğal dil işleme ve akıllı doküman/analiz çözümleri',
+    'Mevcut SAP ve iş sistemlerinize entegre yapay zeka modülleri',
+  ],
+  subProduct: {
+    kicker: 'HAYATA GEÇİRDİĞİMİZ ÜRÜN',
+    title: 'ATS — Aktivite Takip Sistemi',
+    featuresHeading: 'ATS Özellikleri:',
+    lead: 'ATS, bu yapay zeka destekli iş gücü yönetimi yaklaşımını uygulamaya taşıyan web ve mobil uygulamadır. Ekiplerin ve bireysel kullanıcıların günlük efor kayıtlarını, görevlerini ve proje ilerlemesini tek bir merkezden takip etmesini sağlar. Alan (domain) bazlı girişle kurumsal düzeyde güvenlik sunar ve ekibinizin zamanını nereye harcadığını netleştirir.',
+    features: [
+      'Saniyeler içinde görev bazlı efor ve zaman kaydı girişi',
+      'Gerçek zamanlı görev takibi ve önceliklendirme ile düzenli iş akışı',
+      'Kolay okunur performans göstergeleri sunan canlı dashboard',
+      'Alan (domain) bazlı girişle kurumsal düzeyde güvenli erişim',
+      'Web ve mobil arasında kesintisiz senkronizasyon',
+      'Proje, müşteri ve etiket bazlı filtreleme ile detaylı raporlama',
+    ],
+  },
+  partnerNote: 'ATS, Protek Yazılım tarafından geliştirilen kendi ürünümüzdür.',
+  partnerLinkLabel: "Google Play'de görüntüle →",
+  partnerLinkUrl: 'https://play.google.com/store/apps/details?id=com.protek.ats_mobile&hl=tr',
+  appStoreLinkLabel: "App Store'da görüntüle →",
+  appStoreLinkUrl: 'https://apps.apple.com/tr/app/activity-tracking-system/id6670606350?l=tr',
+},
   },
   policies: {
    privacy: {

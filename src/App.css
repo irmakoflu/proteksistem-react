@@ -6,7 +6,7 @@
     --paper:#F7F7F8;
     --white:#FFFFFF;
     --text:#3E4852;
-    --text-light:#7A8590;
+    --text-light:#4b555f;
     --line:#E1E6EA;
 }
 html, body, #root {
@@ -193,7 +193,7 @@ footer{
 .hero{
   background:var(--ink);
   color:var(--white);
-  padding:110px 24px 70px;
+  padding:100px 24px 70px;
   text-align:center;
   position:relative;
 }
@@ -243,7 +243,7 @@ footer{
 
   /* Services grid */
   .services{
-  padding:80px 24px;
+  padding:50px 24px;
   background: var(--paper);
   margin-bottom:0;
 }
@@ -254,7 +254,7 @@ footer{
 }
 .services-kicker{
   display:block;
-  font-size:12.5px;
+  font-size:15px;
   letter-spacing:2px;
   text-transform:uppercase;
   color:var(--brass);
@@ -270,15 +270,34 @@ footer{
     max-width:1180px;margin:0 auto;display:grid;
     grid-template-columns:repeat(5,1fr);gap:18px;
   }
- .card{
+ 
+.card{
+  position:relative;
+  overflow:hidden;
   background:#fff;
   border:1px solid var(--line);
   border-radius:8px;
-  padding:38px 24px 32px;
+  padding:20px 20px 15px;
   text-align:center;
   box-shadow:0 4px 16px rgba(15,30,51,.05);
   transition:.25s;
   cursor:pointer;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:var(--brass);
+  transform:scaleX(0);
+  transition:transform .25s ease;
+}
+
+.card:hover::before{
+  transform:scaleX(1);
 }
 
 @media (max-width: 1150px){
@@ -297,33 +316,89 @@ footer{
 }
 
 .icon{
-  width:64px;height:64px;border-radius:50%;
+  width:64px;height:64px;border-radius:16%;
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 22px;
-  background:var(--brass);
+  background:none;
+  transition: all 0.3s ease;
 }
-.icon svg{width:28px;height:28px;stroke:#fff;}
+.icon svg{width:28px;height:28px;stroke: #000; display: block;}
 
-.card.c-erp .icon{background:var(--slate);}
-.card.c-crm .icon{background:#146357;}
-.card.c-edefter .icon{background:#A9762E;}
-.card.c-ui5 .icon{background:#4A3E86;}
-.card.c-ik .icon{background:#96472F;}
-.card.c-contact .icon{background:#1F6699;}
-.card.c-yapayzeka .icon{background:#2E5C8A;}
+/* --- HİZMET KARTLARI İKON RENKLERİ --- */
 
-.card h3{font-size:18px;color:var(--ink);margin-bottom:10px;font-weight:600;}
-.card p{font-size:14.5px;color:var(--text-light);line-height:1.6;}
-.card a.more,.card span.more{
-  display:inline-block;margin-top:16px;font-size:13.5px;font-weight:600;
-  color:var(--brass);border-bottom:1px solid var(--brass);padding-bottom:2px;
+/* ERP Kartı */
+.card.c-erp .icon { background: color-mix(in srgb, var(--slate) 15%, transparent); }
+.card.c-erp .icon svg { stroke: var(--slate); }
+
+/* CRM Kartı */
+.card.c-crm .icon { background: #1463571A; } /* 1A, %10 saydamlık demektir */
+.card.c-crm .icon svg { stroke: #146357; }
+
+/* e-Defter Kartı */
+.card.c-edefter .icon { background: #A9762E1A; }
+.card.c-edefter .icon svg { stroke: #A9762E; }
+
+/* UI5 Kartı */
+.card.c-ui5 .icon { background: #4A3E861A; }
+.card.c-ui5 .icon svg { stroke: #4A3E86; }
+
+/* İnsan Kaynakları Kartı */
+.card.c-ik .icon { background: #96472F1A; }
+.card.c-ik .icon svg { stroke: #96472F; }
+
+/* İletişim Kartı */
+.card.c-contact .icon { background: #1F66991A; }
+.card.c-contact .icon svg { stroke: #1F6699; }
+
+/* Yapay Zeka Kartı */
+.card.c-yapayzeka .icon { background: #2E5C8A1A; }
+.card.c-yapayzeka .icon svg { stroke: #2E5C8A; }
+
+
+/* --- KART TİPOGRAFİSİ VE BUTONLAR --- */
+.card h3 {
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-  section.block{padding:80px 24px;}
+.card p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.card a.more,
+.card span.more{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;      /* kartın altına sabitler */
+  align-self: flex-start;
+  border: 1.5px solid var(--brass);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brass);
+  transform: translateY(5px);
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.card a.more:hover,
+.card span.more:hover{
+  background: var(--brass);
+  color: #fff;
+  border-color: var(--brass);
+}
+
+  section.block{padding:50px 24px;}
   .block .wrap{max-width:1180px;}
   .about{background:var(--paper);}
   
-  .kicker{font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:14px;}
+  .kicker{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:14px;}
   .about p{margin-bottom:14px;font-size:15px;}
   .about-text{
   max-width:720px;
@@ -621,6 +696,7 @@ footer{
     align-items: center;
     justify-content: center;
   }
+  
   nav{
     position: absolute;
     top: 100%;
@@ -663,6 +739,7 @@ footer{
     opacity:0;
     visibility:hidden;
   }
+  
   .dropdown{
     display:flex;
     flex-direction:column;
@@ -703,6 +780,7 @@ footer{
     max-height:300px;
   }
 }
+
 
   .menu-item-button {
   background: none; border: none; cursor: pointer; width: 100%; text-align: left; padding: 10px 20px; font-size: 14px;
@@ -850,18 +928,22 @@ footer{
 }
 #home,
 #hakkimizda,
-#featured-urunler  {
-  scroll-margin-top: 140px;
+#featured-urunler,
+#services,
+#insan-kaynaklari {
+  scroll-margin-top: 80px;
 }
 
 .home-anchor-offset {
-  padding-top: 140px;
+  padding-top: 50px;
 }
 @media (max-width: 700px) {
   #home,
   #hakkimizda,
-  #featured-urunler {
-    scroll-margin-top: 80px;
+  #featured-urunler,
+  #services,
+  #insan-kaynaklari {
+    scroll-margin-top: 60px;
   }
 
   .home-anchor-offset {
@@ -890,18 +972,99 @@ footer{
   overflow: hidden;
   color: var(--text);
 }
-
-.hr-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: var(--hr-bg-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 0;
+.hr-photo-wrap{
+  position: relative;
+  margin-bottom: 90px;
 }
+.hr-photo{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.hr-cards{
+  position: absolute;
+  left: 50%;
+  bottom: -70px;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.hr-card{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px 24px;
+  box-shadow: 0 16px 40px rgba(15,30,51,.12);
+}
+.hr-card-icon{
+  width: 46px; height: 46px;
+  border-radius: 10px;
+  background: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.hr-card-icon svg{ width: 22px; height: 22px; stroke: var(--ink); }
+.hr-card h3{ font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.hr-card p{ font-size: 13.5px; color: var(--text-light); line-height: 1.6; }
+
+
+@media (max-width: 900px){
+  .hr-photo-wrap{
+    position: static;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    margin-top:-35px;
+    overflow: hidden;
+  }
+  .hr-photo{
+    height: 200px;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .hr-cards{
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    background: none;
+  }
+  .hr-card{
+    background: #fff;
+    border: 1px solid var(--line);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow:none;
+    padding: 18px 20px;
+  }
+  .hr-card-icon{
+    width: 42px;
+    height: 42px;
+    background: var(--paper);
+  }
+  .hr-card-icon svg{
+    width: 20px;
+    height: 20px;
+    stroke: var(--ink);
+  }
+  .hr-card h3{
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .hr-card p{
+    font-size: 13px;
+    color: var(--text-light);
+  }
+}
+
 
 .hr-section .wrap {
   position: relative;
@@ -910,7 +1073,7 @@ footer{
 
 /* Öne Çıkan Ürünlerimiz — carousel */
 .featured-carousel {
-  padding: 70px 24px;
+  padding: 50px 24px;
   background: var(--white);
 }
 .featured-carousel-heading {
@@ -1090,8 +1253,8 @@ footer{
 
 .featured-visual-icon-bg{
   position: absolute;
-  right: -14px;
-  bottom: -14px;
+  right: 8px;
+  bottom: 5px;
   width: 130px;
   height: 130px;
   opacity: .16;
@@ -1155,7 +1318,7 @@ footer{
 
 .featured-info-kicker{
   display: block;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -1185,7 +1348,7 @@ footer{
     min-height: 220px;
   }
   .featured-info-grid{
-    grid-template-columns: 1fr;
+    display: none;
   }
 }
 
@@ -1247,10 +1410,7 @@ footer{
   background: var(--brass-light);
 }
 
-/* Bu iki media query aynı breakpoint'te (700px) olduğu için tek bloğa birleştirildi.
-   Önceki halinde iç içe (nested) yazılmıştı; bu da .cookie-banner ve .cookie-modal
-   gibi tüm çerez stillerinin yanlışlıkla bu 700px media query'sinin İÇİNE hapsolmasına
-   ve masaüstünde stilsiz görünmesine yol açıyordu. */
+
 @media (max-width: 700px) {
   .floating-contact-btn {
     top: auto;
@@ -1553,4 +1713,148 @@ footer{
 
 .kvkk-consent-error span{
   color: #EB5757;
+}
+
+.service-detail-gallery-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.service-detail-gallery{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.service-detail-gallery::-webkit-scrollbar{
+  display: none;
+}
+
+.service-detail-gallery-img{
+  flex: 0 0 auto;
+  width: 260px;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(15,30,51,.08);
+}
+/* Galeri lightbox (büyütülmüş resim görüntüleyici) */
+.gallery-lightbox-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(20,20,20,.88);
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.gallery-lightbox-img{
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  object-fit: contain;
+}
+
+.gallery-lightbox-close{
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+.gallery-lightbox-close:hover{
+  background: rgba(255,255,255,.3);
+}
+
+.gallery-lightbox-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.gallery-lightbox-nav svg{
+  width: 22px;
+  height: 22px;
+}
+.gallery-lightbox-nav:hover{
+  background: var(--brass);
+}
+.gallery-lightbox-prev{ left: 24px; }
+.gallery-lightbox-next{ right: 24px; }
+
+@media (max-width: 700px){
+  .gallery-lightbox-overlay{ padding: 16px; }
+  .gallery-lightbox-close{ top: 12px; right: 12px; width: 34px; height: 34px; }
+  .gallery-lightbox-nav{ width: 38px; height: 38px; }
+  .gallery-lightbox-prev{ left: 10px; }
+  .gallery-lightbox-next{ right: 10px; }
+}
+
+.gallery-arrow{
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px){
+  .service-detail-gallery-img{
+    width: 200px;
+  }
+  .gallery-arrow{
+    width: 34px;
+    height: 34px;
+  }
+}
+.services-grid-3col{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.services-grid-3col > .card{
+  flex: 0 0 calc(33.333% - 12px);
+  max-width: calc(33.333% - 12px);
+}
+
+@media (max-width: 1150px){
+  .services-grid-3col > .card{
+    flex: 0 0 calc(50% - 9px);
+    max-width: calc(50% - 9px);
+    
+  }
+}
+
+@media (max-width: 700px){
+  .services-grid-3col > .card{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }

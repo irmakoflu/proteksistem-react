@@ -66,7 +66,7 @@ function Services({ lang }) {
           <span className="services-kicker">{t('home.whatWeOffer')}</span>
           <h2>{t('home.ourServices')}</h2>
         </div>
-        <div className="grid">
+        <div className="services-grid-3col">
           {SERVICE_KEYS.map((key) => (
             <div
               key={key}

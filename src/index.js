@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+console.log(
+  '%cDeveloped by İrmak Oflu\n%chttps://github.com/irmakoflu',
+  'color:#E12419; font-size:14px; font-weight:bold;',
+  'color:#008CA8; font-size:12px;'
+);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
