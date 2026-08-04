@@ -158,7 +158,7 @@ footer{
   .dropdown{position:relative;}
   .dropdown .menu{
     position:absolute;top:100%;left:-16px;background:var(--white);border:1px solid var(--line);
-    min-width:220px;padding:8px 0;box-shadow:0 12px 28px rgba(15,30,51,.1);
+    min-width:220px;padding:0px 0;box-shadow:0 12px 28px rgba(15,30,51,.1);
     opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease;border-top:2px solid var(--brass);
   }
   .dropdown:hover .menu{opacity:1;visibility:visible;transform:translateY(0);}
@@ -779,9 +779,11 @@ footer{
     overflow:hidden;
     transition:max-height .2s ease;
   }
+  
   .dropdown.mobile-open .menu{
     max-height:300px;
   }
+  
 }
 
 
