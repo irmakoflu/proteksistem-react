@@ -689,6 +689,16 @@ footer{
   width: 26px;
   height: 26px;
 }
+.dropdown-toggle{
+  display: none;
+}
+@media(max-width:1150px){
+  .dropdown-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 @media(max-width:1150px){
   .mobile-menu-btn{
@@ -782,6 +792,19 @@ footer{
   
   .dropdown.mobile-open .menu{
     max-height:300px;
+  }
+  .dropdown-desktop-only .dropdown-toggle {
+    display: none !important;
+  }
+  .dropdown-desktop-only .menu {
+    display: none !important;
+  }
+  .dropdown-desktop-only .dropdown-row {
+    /* toggle buton gizlenince satırın tam genişlik kullanmasını sağlar */
+    justify-content: flex-start;
+  }
+  dropdown-desktop-only .menu {
+    display: none !important;
   }
   
 }

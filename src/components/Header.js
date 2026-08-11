@@ -19,7 +19,7 @@ function Header({ lang, setLang }) {
   useEffect(() => {
     if (location.pathname !== '/') return;
 
-   const sectionIds = ['home', 'hakkimizda', 'featured-urunler', 'services', 'insan-kaynaklari'];
+    const sectionIds = ['home', 'hakkimizda', 'featured-urunler', 'services', 'insan-kaynaklari'];
     const observer = new IntersectionObserver(
       (entries) => {
         if (lockRef.current) return; // scroll devam ederken ara bölümleri yoksay
@@ -75,6 +75,14 @@ function Header({ lang, setLang }) {
     lockTimeoutRef.current = setTimeout(releaseLock, 1500);
   };
 
+  // location her değiştiğinde bir scrollTo hedefi varsa (menüden tıklanarak
+  // ya da geri tuşuyla otomatik), kırmızı kutuyu anında hedefe sabitler.
+  useEffect(() => {
+    if (location.pathname === '/' && location.state && location.state.scrollTo) {
+      jumpActiveSectionTo(location.state.scrollTo);
+    }
+  }, [location]);
+
   const handleHomeClick = (e) => {
     markAppNav();
     setMenuOpen(false);
@@ -93,7 +101,9 @@ function Header({ lang, setLang }) {
 
   const isHomeActive = location.pathname === '/' && activeSection === 'home';
   const isAboutActive = location.pathname === '/' && activeSection === 'hakkimizda';
-   const isFeaturedActive = location.pathname === '/' && activeSection === 'featured-urunler';
+  const isFeaturedActive =
+    (location.pathname === '/' && activeSection === 'featured-urunler') ||
+    location.pathname.startsWith('/urunler');
   const isServicesActive =
     (location.pathname === '/' && activeSection === 'services') ||
     location.pathname.startsWith('/hizmetlerimiz');
@@ -141,7 +151,9 @@ function Header({ lang, setLang }) {
                   {t('nav.about')}
                 </Link>
               </li>
-              <li>
+
+              {/* ÜRÜNLER: masaüstünde hover ile açılan dropdown, mobilde düz link (açılır menü yok) */}
+              <li className="dropdown dropdown-desktop-only">
                 <Link
                   to="/"
                   state={{ scrollTo: 'featured-urunler' }}
@@ -150,9 +162,20 @@ function Header({ lang, setLang }) {
                 >
                   {t('nav.products')}
                 </Link>
+                <div className="menu">
+                  <Link to="/urunler/duran-varlik-yonetimi" onClick={() => handleNavClick()}>
+                    {t('products.duran-varlik-yonetimi.title')}
+                  </Link>
+                  <Link to="/urunler/yapayzeka" onClick={() => handleNavClick()}>
+                    {t('products.yapayzeka.title')}
+                  </Link>
+                  <Link to="/urunler/enflasyon-muhasebesi" onClick={() => handleNavClick()}>
+                    {t('products.enflasyon-muhasebesi.title')}
+                  </Link>
+                </div>
               </li>
 
-              <li className="dropdown">
+              <li className="dropdown dropdown-desktop-only">
                 <Link
                   to="/"
                   state={{ scrollTo: 'services' }}
@@ -166,9 +189,10 @@ function Header({ lang, setLang }) {
                   <Link to="/hizmetlerimiz/crm" onClick={() => handleNavClick()}>{t('services.crm.title')}</Link>
                   <Link to="/hizmetlerimiz/edefter" onClick={() => handleNavClick()}>{t('services.edefter.title')}</Link>
                   <Link to="/hizmetlerimiz/ui5" onClick={() => handleNavClick()}>{t('services.ui5.title')}</Link>
-                    <Link to="/hizmetlerimiz/yapayzeka" onClick={() => handleNavClick()}>{t('services.yapayzeka.title')}</Link>
+                  <Link to="/hizmetlerimiz/yapayzeka" onClick={() => handleNavClick()}>{t('services.yapayzeka.title')}</Link>
                 </div>
               </li>
+
               <li>
                 <Link
                   to="/"
