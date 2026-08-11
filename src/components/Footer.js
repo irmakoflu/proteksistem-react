@@ -21,12 +21,6 @@ function Footer({ lang }) {
   return (
     <footer>
       <div className="footer-inner">
-        <div className="footer-brand">
-          <b>{t('footer.brand')}</b>
-          <span className="footer-divider-dot">•</span>
-          <span>© 2026 — {t('footer.rights')}</span>
-        </div>
-
         <div className="footer-links">
           {links.map((link) => (
             <Link
@@ -38,6 +32,12 @@ function Footer({ lang }) {
               {link.label}
             </Link>
           ))}
+        </div>
+
+        <div className="footer-brand">
+          <b>{t('footer.brand')}</b>
+          <span className="footer-divider-dot">•</span>
+          <span>© 2026 — {t('footer.rights')}</span>
         </div>
       </div>
     </footer>

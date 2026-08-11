@@ -12,8 +12,8 @@ function ScrollToHash() {
       const el = document.getElementById(target);
       if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
     } else {
-      const topbarHeight = document.querySelector('.topbar')?.offsetHeight || 0;
-      window.scrollTo(0, topbarHeight);
+      // Sayfa değiştiğinde direkt en üste (0,0) konumlandırır
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
   }, [location]);
 

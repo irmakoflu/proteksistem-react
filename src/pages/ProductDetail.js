@@ -183,25 +183,23 @@ function ProductDetail({ lang }) {
             {t('serviceDetail.requestInfo')}
           </button>
 
-          {/* HATA BURADAYDI: <a etiketi açılmamıştı */}
           {product.partnerLinkUrl && (
             <a
               href={product.partnerLinkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="service-detail-back"
+              className="service-detail-back external-link-btn"
             >
               {product.partnerLinkLabel}
             </a>
           )}
 
-          {/* HATA BURADAYDI: <a etiketi açılmamıştı */}
           {product.appStoreLinkUrl && (
             <a
               href={product.appStoreLinkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="service-detail-back"
+              className="service-detail-back external-link-btn"
             >
               {product.appStoreLinkLabel}
             </a>
