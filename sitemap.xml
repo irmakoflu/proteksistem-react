@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Anasayfa -->
+  <url>
+       <loc>https://proteksistem.com/</loc>
+       <lastmod>2026-08-04T12:13:09+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/</loc>
+       <changefreq>daily</changefreq>
+       <priority>0.9000</priority>
+  </url>
+
+  <!-- Hizmetler ve Detayları -->
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz</loc>
+       <changefreq>weekly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz/erp</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz/crm</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz/edefter</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz/ui5</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/hizmetlerimiz/yapayzeka</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+
+  <!-- Ürünler ve Detayları -->
+  <url>
+       <loc>https://proteksistem.com/#/urunler/duran-varlik-yonetimi</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/urunler/yapayzeka</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/urunler/enflasyon-muhasebesi</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.7000</priority>
+  </url>
+
+  <!-- Kurumsal ve İletişim -->
+  <url>
+       <loc>https://proteksistem.com/#/iletisim</loc>
+       <changefreq>monthly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+
+  <!-- Politika ve Yasal Sayfalar -->
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/gizlilik-politikasi</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/kvkk-aydinlatma-metni</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/cerez-politikasi</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/kullanim-kosullari</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/ticaret-sicil-bilgileri</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/hizmet-seviyesi-taahhutleri</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/politikalar/kalite-politikasi</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+  <url>
+       <loc>https://proteksistem.com/#/bilgi-guvenligi-politikasi</loc>
+       <changefreq>yearly</changefreq>
+       <priority>0.3000</priority>
+  </url>
+
+</urlset>
